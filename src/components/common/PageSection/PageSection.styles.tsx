@@ -11,9 +11,8 @@ export const PageSectionContainer = styled.section<PageSectionContainerProps>`
   padding: 88px 24px;
   background: ${({ backgroundColor, theme }) =>
     backgroundColor ?? theme.colors.white};
-
   @media (min-width: 1024px) {
-    padding: 160px 244px;
+    padding: 160px 200px;
   }
   @media only screen and (min-width: 1824px) {
     padding-left: 270px;
