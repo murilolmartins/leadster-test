@@ -5,7 +5,7 @@ export const HomeBannerContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: max-content;
+  width: 100%;
 `;
 
 export const HomeBannerTitle = styled.h1``;
@@ -22,9 +22,16 @@ export const HomeBannerTagText = styled.span`
 `;
 
 export const HomeBannerDivisor = styled.hr`
-  width: 110%;
+  width: 100%;
+  max-width: 300px;
   border: 0.5px solid ${({ theme }) => theme.colors.gray_100};
   margin-top: 15px;
+  @media (min-width: 425px) {
+    max-width: 400px;
+  }
+  @media (min-width: 768px) {
+    max-width: 750px;
+  }
 `;
 
 export const HomeBannerDescription = styled.p`
