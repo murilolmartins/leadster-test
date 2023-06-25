@@ -62,7 +62,9 @@ export default {
     }
   },
   gaps: {
-    small: '10px',
+    small: '6px',
+    xsmall: '10px',
+    xxxsmall: '12px',
     medium: '20px',
     large: '40px',
     xlarge: '80px',

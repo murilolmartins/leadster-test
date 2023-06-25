@@ -8,14 +8,17 @@ export const PageSectionContainer = styled.section<PageSectionContainerProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 88px 24px;
+  padding: 80px 24px;
   background: ${({ backgroundColor, theme }) =>
     backgroundColor ?? theme.colors.white};
+  @media (min-width: 425px) {
+    padding: 80px 40px;
+  }
   @media (min-width: 1024px) {
-    padding: 160px 200px;
+    padding: 120px 150px;
   }
   @media only screen and (min-width: 1824px) {
-    padding-left: 270px;
-    padding-right: 270px;
+    padding-left: 200px;
+    padding-right: 200px;
   }
 `;

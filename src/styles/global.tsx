@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
     button {
       font-family: ${theme.font.family};
     }
+
     p {
       color: ${theme.colors.black};
       font-size: ${({ theme }) => theme.font.sizes.xsmall};
@@ -38,6 +39,7 @@ const GlobalStyles = createGlobalStyle`
         font-size: ${theme.font.sizes.xlarge};
       }
     }
+
     h1 {
       font-size: ${theme.font.sizes.xxlarge};
       font-weight: ${theme.font.weight.normal};
@@ -48,11 +50,26 @@ const GlobalStyles = createGlobalStyle`
         font-size: ${theme.font.sizes.xxxhuge};
       }
     }
+
+    h2 {
+      font-size: ${theme.font.sizes.large};
+      font-weight: ${theme.font.weight.normal};
+      @media (min-width: 425px) {
+        font-size: ${theme.font.sizes.xxlarge};
+      }
+      @media (min-width: 768px) {
+        font-size: ${theme.font.sizes.huge};
+      }
+    }
+
     span {
       font-size: ${theme.font.sizes.small};
       font-weight: ${({ theme }) => theme.font.weight.bold};
+      @media (min-width: 425px) {
+        font-size: ${({ theme }) => theme.font.sizes.xsmall};
+      }
       @media (min-width: 768px) {
-        font-size: ${({ theme }) => theme.font.sizes.xxsmall};
+        font-size: ${({ theme }) => theme.font.sizes.medium};
       }
     }
 
