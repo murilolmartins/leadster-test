@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 
 import theme from '../styles/theme';
 
+import { GlobalStyles } from '@styles';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyles from 'styles/global';
 
 interface StyledComponentsThemeProviderProps {
   children: ReactNode;

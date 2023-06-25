@@ -6,6 +6,7 @@ export const HomeBannerContainer = styled.div`
   align-items: center;
   flex-direction: column;
   width: 100%;
+  padding: 60px 0px;
 `;
 
 export const HomeBannerTitle = styled.h1``;
@@ -17,7 +18,7 @@ export const HomeBannerTag = styled.div`
   display: flex;
 `;
 
-export const HomeBannerTagText = styled.span`
+export const HomeBannerTagText = styled.p`
   color: ${({ theme }) => theme.colors.primary};
 `;
 

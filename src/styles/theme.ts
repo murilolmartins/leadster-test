@@ -32,7 +32,7 @@ export default {
       small: '8px',
       xxsmall: '10px',
       xsmall: '12px',
-      medium: '14px',
+      medium: '15px',
       large: '16px',
       xlarge: '18px',
       xxlarge: '22px',
@@ -49,13 +49,15 @@ export default {
     white: '#fff',
     gray_50: '#f0efeb',
     gray_100: '#d1d1d1',
+    gray_200: '#677294',
     gray_300: '#343a40',
-    light_blue: '#e7f5ff',
+    light_blue: '#e9ecf3',
     purple_100: '#7F57DF',
     purple_300: '#5855E9',
-    primary: '#2c83fb',
-    cyan_400: '#1f7680',
-    black: '#0D0D0D',
+    primary: '#007dff',
+    blue_50: '#ebeef5',
+    cyan_400: '#858da8',
+    black: '#2c3e50',
     gradient: {
       mainTheme:
         'linear-gradient(-45deg, rgba(44,234,251,1) 0%, rgba(31,118,240,1) 0%)'

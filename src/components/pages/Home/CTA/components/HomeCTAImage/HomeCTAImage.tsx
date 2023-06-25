@@ -1,5 +1,6 @@
-import leadsComparative from '../../../../../../public/images/leads-comparative.png';
 import * as S from './HomeCTAImage.styles';
+
+import leadsComparative from '@images/leads-comparative.png';
 
 const HomeCTAImage = () => {
   return (

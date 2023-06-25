@@ -9,7 +9,7 @@ import { ButtonProps } from 'antd';
 type LinkRef = HTMLButtonElement | HTMLAnchorElement;
 type NextLinkProps = Omit<ButtonProps, 'href'> &
   Pick<LinkProps, 'href' | 'as' | 'prefetch' | 'locale'> & {
-    buttonType?: LinkButtonType;
+    buttontype?: LinkButtonType;
     children: ReactNode;
   };
 
@@ -19,15 +19,17 @@ const LinkButton = (
     as,
     prefetch,
     locale,
-    buttonType = LinkButtonType.PRIMARY,
+    buttontype = LinkButtonType.PRIMARY,
     children,
     ...rest
   }: NextLinkProps,
   ref: Ref<LinkRef>
 ) => (
   <Link href={href} as={as} prefetch={prefetch} locale={locale} passHref>
-    <S.StyledLinkButton ref={ref} type="link" buttonType={buttonType} {...rest}>
-      <S.StyledLinkButtonText>{children}</S.StyledLinkButtonText>
+    <S.StyledLinkButton ref={ref} type="link" buttontype={buttontype} {...rest}>
+      <S.StyledLinkButtonText className="p_small">
+        {children}
+      </S.StyledLinkButtonText>
     </S.StyledLinkButton>
   </Link>
 );
