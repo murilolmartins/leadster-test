@@ -40,6 +40,17 @@ const GlobalStyles = createGlobalStyle`
       }
     }
 
+    .p_small {
+      font-size: ${theme.font.sizes.small};
+      font-weight: ${({ theme }) => theme.font.weight.bold};
+      @media (min-width: 425px) {
+        font-size: ${({ theme }) => theme.font.sizes.xsmall};
+      }
+      @media (min-width: 768px) {
+        font-size: ${({ theme }) => theme.font.sizes.medium};
+      }
+    }
+
     h1 {
       font-size: ${theme.font.sizes.xxlarge};
       font-weight: ${theme.font.weight.normal};
@@ -62,17 +73,6 @@ const GlobalStyles = createGlobalStyle`
       }
     }
 
-    span {
-      font-size: ${theme.font.sizes.small};
-      font-weight: ${({ theme }) => theme.font.weight.bold};
-      @media (min-width: 425px) {
-        font-size: ${({ theme }) => theme.font.sizes.xsmall};
-      }
-      @media (min-width: 768px) {
-        font-size: ${({ theme }) => theme.font.sizes.medium};
-      }
-    }
-
     b {
       font-weight: ${theme.font.weight.semiBold};
     }
@@ -92,4 +92,4 @@ const GlobalStyles = createGlobalStyle`
 
 `;
 
-export default GlobalStyles;
+export { GlobalStyles };

@@ -14,8 +14,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@constants": ["constants/index"],
+      "@images/*": ["../public/images/*"],
+      "@components-common": ["components/common/index"],
+      "@components-layout": ["components/pages/index"],
+      "@styles": ["styles/index"],
+      "@interfaces": ["interfaces/index"],
+      "@providers": ["providers/index"]
+    }
   },
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

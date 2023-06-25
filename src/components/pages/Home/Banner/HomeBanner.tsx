@@ -1,8 +1,7 @@
-import { PageSection } from 'components/common';
-
-import { HomeBannerColoredTitle } from './components/HomeBannerColoredTitle';
+import { HomeBannerColoredTitle } from './components/HomeBannerColoredTitle/HomeBannerColoredTitle';
 import * as S from './HomeBanner.styles';
 
+import { PageSection } from '@components-common';
 import theme from 'styles/theme';
 
 const HomeBanner = () => {
@@ -10,7 +9,9 @@ const HomeBanner = () => {
     <PageSection backgroudColor={theme.colors.light_blue}>
       <S.HomeBannerContainer>
         <S.HomeBannerTag>
-          <S.HomeBannerTagText>WEBINARS EXCLUSIVOS</S.HomeBannerTagText>
+          <S.HomeBannerTagText className="p_small">
+            WEBINARS EXCLUSIVOS
+          </S.HomeBannerTagText>
         </S.HomeBannerTag>
         <S.HomeBannerTitle>Menos conversinha,</S.HomeBannerTitle>
         <HomeBannerColoredTitle />

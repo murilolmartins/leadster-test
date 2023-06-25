@@ -4,12 +4,17 @@ import { Button, ButtonProps } from 'antd';
 import styled, { css } from 'styled-components';
 
 interface StyledLinkButtonProps extends ButtonProps {
-  buttonType: LinkButtonType;
+  buttontype: LinkButtonType;
 }
 
 const primary = css`
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.primary};
+  :hover {
+    color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 const LinkButtonTypeMap = {
@@ -28,11 +33,10 @@ export const StyledLinkButton = styled(Button)<StyledLinkButtonProps>`
   @media (min-width: 768px) {
     padding: 25px 35px !important;
   }
-  ${({ buttonType }) => LinkButtonTypeMap[buttonType]}
+  ${({ buttontype }) => LinkButtonTypeMap[buttontype]}
 `;
 
-export const StyledLinkButtonText = styled.span`
-  color: ${({ theme }) => theme.colors.white};
+export const StyledLinkButtonText = styled.p`
   font-weight: ${({ theme }) => theme.font.weight.bold};
   font-size: ${({ theme }) => theme.font.sizes.small};
   @media (min-width: 425px) {

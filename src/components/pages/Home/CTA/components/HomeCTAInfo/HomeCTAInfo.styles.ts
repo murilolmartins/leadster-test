@@ -40,7 +40,7 @@ export const HomeCTAInfoButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ theme }) => theme.gaps.small};
+  gap: ${({ theme }) => theme.gaps.medium};
 `;
 
 export const HomeCTAInfoRDImage = styled(Image)`
