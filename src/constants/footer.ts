@@ -1,6 +1,6 @@
-import { FooterItem } from '@interfaces';
+import { IFooterItem } from '@interfaces';
 
-export const footerItemsValues: FooterItem[] = [
+export const footerItemsValues: IFooterItem[] = [
   {
     text: 'Copyright © 2015 - 2022 Todos os direitos reservados ',
     link: {
