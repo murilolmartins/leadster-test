@@ -9,7 +9,7 @@ const meta: Meta<typeof RootLayout> = {
 
 type Story = StoryObj<typeof RootLayout>;
 
-export const Primary: Story = {
+export const Basic: Story = {
   render: () => (
     <RootLayout>
       <div>Some page layout</div>
