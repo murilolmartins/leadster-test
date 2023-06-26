@@ -7,7 +7,7 @@ import {
   NavSectionSocialMediaItem
 } from 'interfaces';
 
-export const NavSectionLinksValues: NavSectionColum[] = [
+export const navSectionLinksValues: NavSectionColum[] = [
   {
     title: 'Links Principais',
     links: [
@@ -73,7 +73,7 @@ export const NavSectionLinksValues: NavSectionColum[] = [
   }
 ];
 
-export const NavSectionSocialMediaValues: NavSectionSocialMediaItem[] = [
+export const navSectionSocialMediaValues: NavSectionSocialMediaItem[] = [
   {
     icon: BiLogoLinkedin,
     url: 'https://www.linkedin.com/company/leadster-platform'
@@ -88,7 +88,7 @@ export const NavSectionSocialMediaValues: NavSectionSocialMediaItem[] = [
   }
 ];
 
-export const NavSectionContactsValues: NavSectionContactsItem[] = [
+export const navSectionContactsValues: NavSectionContactsItem[] = [
   {
     label: 'E-mail:',
     text: 'contato@leadster.com.br'

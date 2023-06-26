@@ -27,10 +27,10 @@ export const HomeBannerDivisor = styled.hr`
   max-width: 300px;
   border: 0.5px solid ${({ theme }) => theme.colors.gray_100};
   margin-top: 15px;
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     max-width: 400px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     max-width: 750px;
   }
 `;
@@ -39,10 +39,10 @@ export const HomeBannerDescription = styled.p`
   width: 266px;
   text-align: center;
   padding-top: 10px;
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     width: 300px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 100%;
   }
 `;

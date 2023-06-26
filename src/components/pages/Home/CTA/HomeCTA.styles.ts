@@ -7,7 +7,7 @@ export const HomeCTAContainer = styled.div`
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.gaps.medium};
   width: 100%;
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: ${({ theme }) => theme.gaps.large};
   }
 `;

@@ -5,10 +5,10 @@ import styled from 'styled-components';
 export const HomeCTAImageContainer = styled.div`
   width: 100%;
   max-width: 300px;
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     max-width: 420px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     max-width: 650px;
   }
 `;

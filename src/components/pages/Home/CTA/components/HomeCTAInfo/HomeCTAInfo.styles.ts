@@ -17,10 +17,10 @@ export const HomeCTAInfoTextContainer = styled.div`
   flex-direction: column;
   gap: ${({ theme }) => theme.gaps.small};
   max-width: 300px;
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     max-width: 420px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     max-width: 600px;
   }
 `;
@@ -44,12 +44,12 @@ export const HomeCTAInfoButtonContainer = styled.div`
 `;
 
 export const HomeCTAInfoRDImage = styled(Image)`
-  height: auto;
+  height: 40px;
   width: auto;
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     height: 40px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 52px;
   }
 `;
@@ -58,13 +58,12 @@ export const HomeCTAInfoTagsContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: ${({ theme }) => theme.gaps.small};
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     gap: ${({ theme }) => theme.gaps.xsmall};
   }
 `;
 
 export const HomeCTAInfoTagsDivisor = styled.hr`
-  height: 15px;
   width: 2px;
   border: 0.5px solid ${({ theme }) => theme.colors.gray_300};
 `;

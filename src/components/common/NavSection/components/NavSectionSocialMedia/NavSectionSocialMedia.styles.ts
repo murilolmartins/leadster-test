@@ -22,6 +22,11 @@ export const NavSectionSocialMediaListItem = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ${({ theme }) => theme.transition.default};
+  :hover {
+    background: ${({ theme }) => theme.colors.blue_100};
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const NavSectionSocialMediaLink = styled(Link)``;

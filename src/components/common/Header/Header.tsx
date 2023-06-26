@@ -1,6 +1,6 @@
-import * as S from './Header.styles';
-
 import logo from '@images/logo.png';
+
+import * as S from './Header.styles';
 
 const Header = () => {
   return (

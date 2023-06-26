@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { NavSection } from '../NavSection/NavSection';
 
@@ -13,6 +14,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
       <Header />
       {children}
       <NavSection />
+      <Footer />
     </>
   );
 };

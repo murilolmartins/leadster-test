@@ -11,8 +11,11 @@ export const InfoTagContainer = styled.span`
 
 export const InfoTagImage = styled(Image)`
   width: auto;
-  height: 13px;
-  @media (min-width: 768px) {
+  height: 11px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
+    height: 13px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 17px;
   }
 `;

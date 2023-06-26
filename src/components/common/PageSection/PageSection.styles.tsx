@@ -11,10 +11,10 @@ export const PageSectionContainer = styled.section<PageSectionContainerProps>`
   padding: 40px 24px;
   background: ${({ backgroundColor, theme }) =>
     backgroundColor ?? theme.colors.white};
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     padding: 40px 40px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     padding: 80px 150px;
   }
   @media only screen and (min-width: 1824px) {
