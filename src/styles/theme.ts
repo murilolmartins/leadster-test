@@ -52,6 +52,7 @@ export default {
     gray_200: '#677294',
     gray_300: '#343a40',
     light_blue: '#e9ecf3',
+    blue_100: '#00aff0',
     purple_100: '#7F57DF',
     purple_300: '#5855E9',
     primary: '#007dff',
@@ -71,5 +72,15 @@ export default {
     large: '40px',
     xlarge: '80px',
     xxlarge: '160px'
+  },
+  transition: {
+    default: 'all 0.2s linear'
+  },
+  breakpoints: {
+    mobile_xl: '425px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptop_l: '1440px',
+    widscreen: '1920px'
   }
 } as const;

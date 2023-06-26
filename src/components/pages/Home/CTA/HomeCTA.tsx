@@ -1,8 +1,9 @@
+import { PageSection } from '@components-common';
+
 import { HomeCTAImage } from './components/HomeCTAImage/HomeCTAImage';
 import { HomeCTAInfo } from './components/HomeCTAInfo/HomeCTAInfo';
 import * as S from './HomeCTA.styles';
 
-import { PageSection } from '@components-common';
 import theme from 'styles/theme';
 
 const HomeCTA = () => {

@@ -1,9 +1,9 @@
-import * as S from './HomeCTAInfo.styles';
-
 import { InfoTag, LinkButton } from '@components-common';
 import cardTag from '@images/no-card-dark.webp';
 import ratingTag from '@images/rating.webp';
 import rdImage from '@images/selo_RD.png';
+
+import * as S from './HomeCTAInfo.styles';
 
 const HomeCTAInfo = () => {
   return (

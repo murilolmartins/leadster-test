@@ -13,10 +13,10 @@ export const HomeBannerColoredTitleText = styled.h1`
   -webkit-text-fill-color: transparent;
   font-size: ${({ theme }) => theme.font.sizes.xhuge};
   font-weight: ${({ theme }) => theme.font.weight.bold};
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     font-size: ${({ theme }) => theme.font.sizes.xxhuge};
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: ${({ theme }) => theme.font.sizes.xxmega};
   }
 `;
@@ -25,7 +25,7 @@ export const HomeBannerColoredTitleColoredImageContainer = styled.div`
   position: absolute;
   top: 2px;
   right: -10px;
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     top: 11px;
     right: -15px;
   }
@@ -34,7 +34,7 @@ export const HomeBannerColoredTitleColoredImageContainer = styled.div`
 export const HomeBannerColoredTitleColoredImage = styled(Image)`
   height: 15px;
   width: 20px;
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 35px;
     width: 50px;
   }

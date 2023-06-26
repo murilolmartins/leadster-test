@@ -58,9 +58,15 @@
         "groups": [
           ["/^react/", "/^next/", "/^@next/"],
           "/module/",
-          "/^components/",
-          "/absolute/",
-          "/^@shared/",
+          [
+            "/^@components-layout/",
+            "/^@components-common/",
+            "/^@constants/",
+            "/^@images/",
+            "/^@styles/",
+            "/^@interfaces/",
+            "/^@providers/"
+          ],
           ["parent", "sibling", "index"]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }

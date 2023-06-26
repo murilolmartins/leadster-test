@@ -31,33 +31,37 @@ const GlobalStyles = createGlobalStyle`
 
     p {
       color: ${theme.colors.black};
-      font-size: ${({ theme }) => theme.font.sizes.xsmall};
-      @media (min-width: 425px) {
-        font-size: ${theme.font.sizes.medium};
+      font-size: ${theme.font.sizes.xsmall};
+      @media (min-width: ${theme.breakpoints.mobile_xl}) {
+        font-size: ${theme.font.sizes.xxsmall};
       }
-      @media (min-width: 768px) {
+      @media (min-width: ${theme.breakpoints.tablet}) {
         font-size: ${theme.font.sizes.xlarge};
       }
     }
 
     .p_small {
       font-size: ${theme.font.sizes.small};
-      font-weight: ${({ theme }) => theme.font.weight.bold};
-      @media (min-width: 425px) {
-        font-size: ${({ theme }) => theme.font.sizes.xsmall};
+      font-weight: ${theme.font.weight.bold};
+      @media (min-width: ${theme.breakpoints.mobile_xl}) {
+        font-size: ${theme.font.sizes.xsmall};
       }
-      @media (min-width: 768px) {
-        font-size: ${({ theme }) => theme.font.sizes.medium};
+      @media (min-width: ${theme.breakpoints.tablet}) {
+        font-size: ${theme.font.sizes.medium};
       }
+    }
+
+    .p_footer {
+      font-size: ${theme.font.sizes.medium};
     }
 
     h1 {
       font-size: ${theme.font.sizes.xxlarge};
       font-weight: ${theme.font.weight.normal};
-      @media (min-width: 425px) {
+      @media (min-width: ${theme.breakpoints.mobile_xl}) {
         font-size: ${theme.font.sizes.huge};
       }
-      @media (min-width: 768px) {
+      @media (min-width: ${theme.breakpoints.tablet}) {
         font-size: ${theme.font.sizes.xxxhuge};
       }
     }
@@ -65,10 +69,10 @@ const GlobalStyles = createGlobalStyle`
     h2 {
       font-size: ${theme.font.sizes.large};
       font-weight: ${theme.font.weight.normal};
-      @media (min-width: 425px) {
+      @media (min-width: ${theme.breakpoints.mobile_xl}) {
         font-size: ${theme.font.sizes.xxlarge};
       }
-      @media (min-width: 768px) {
+      @media (min-width: ${theme.breakpoints.tablet}) {
         font-size: ${theme.font.sizes.huge};
       }
     }

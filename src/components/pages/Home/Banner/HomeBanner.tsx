@@ -1,7 +1,8 @@
+import { PageSection } from '@components-common';
+
 import { HomeBannerColoredTitle } from './components/HomeBannerColoredTitle/HomeBannerColoredTitle';
 import * as S from './HomeBanner.styles';
 
-import { PageSection } from '@components-common';
 import theme from 'styles/theme';
 
 const HomeBanner = () => {

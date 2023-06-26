@@ -8,10 +8,14 @@ interface StyledLinkButtonProps extends ButtonProps {
 }
 
 const primary = css`
-  color: ${({ theme }) => theme.colors.white};
+  p {
+    color: ${({ theme }) => theme.colors.white};
+  }
   background: ${({ theme }) => theme.colors.primary};
   :hover {
-    color: ${({ theme }) => theme.colors.primary};
+    p {
+      color: ${({ theme }) => theme.colors.primary};
+    }
     background: ${({ theme }) => theme.colors.white};
     border: 1px solid ${({ theme }) => theme.colors.primary};
   }
@@ -27,10 +31,11 @@ export const StyledLinkButton = styled(Button)<StyledLinkButtonProps>`
   align-items: center;
   border-radius: 50px !important;
   padding: 5px 15px !important;
-  @media (min-width: 425px) {
+  transition: ${({ theme }) => theme.transition.default};
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     padding: 10px 25px !important;
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 25px 35px !important;
   }
   ${({ buttontype }) => LinkButtonTypeMap[buttontype]}
@@ -39,10 +44,10 @@ export const StyledLinkButton = styled(Button)<StyledLinkButtonProps>`
 export const StyledLinkButtonText = styled.p`
   font-weight: ${({ theme }) => theme.font.weight.bold};
   font-size: ${({ theme }) => theme.font.sizes.small};
-  @media (min-width: 425px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
     font-size: ${({ theme }) => theme.font.sizes.xsmall};
   }
-  @media (min-width: 768px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: ${({ theme }) => theme.font.sizes.medium};
   }
 `;
