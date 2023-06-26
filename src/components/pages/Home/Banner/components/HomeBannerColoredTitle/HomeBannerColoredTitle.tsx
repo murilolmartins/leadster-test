@@ -1,6 +1,6 @@
-import * as S from './HomeBannerColoredTitle.styles';
-
 import textHeader from '@images/asset-header.png';
+
+import * as S from './HomeBannerColoredTitle.styles';
 
 const HomeBannerColoredTitle = () => {
   return (

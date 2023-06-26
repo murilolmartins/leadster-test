@@ -24,4 +24,4 @@ const NavSectionSocialMedia = () => {
   );
 };
 
-export default NavSectionSocialMedia;
+export { NavSectionSocialMedia };
