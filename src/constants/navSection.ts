@@ -2,12 +2,12 @@ import { BiLogoFacebook, BiLogoLinkedin } from 'react-icons/bi';
 import { BsInstagram } from 'react-icons/bs';
 
 import {
-  NavSectionColum,
-  NavSectionContactsItem,
-  NavSectionSocialMediaItem
+  INavSectionColum,
+  INavSectionContactsItem,
+  INavSectionSocialMediaItem
 } from 'interfaces';
 
-export const navSectionLinksValues: NavSectionColum[] = [
+export const navSectionLinksValues: INavSectionColum[] = [
   {
     title: 'Links Principais',
     links: [
@@ -73,7 +73,7 @@ export const navSectionLinksValues: NavSectionColum[] = [
   }
 ];
 
-export const navSectionSocialMediaValues: NavSectionSocialMediaItem[] = [
+export const navSectionSocialMediaValues: INavSectionSocialMediaItem[] = [
   {
     icon: BiLogoLinkedin,
     url: 'https://www.linkedin.com/company/leadster-platform'
@@ -88,7 +88,7 @@ export const navSectionSocialMediaValues: NavSectionSocialMediaItem[] = [
   }
 ];
 
-export const navSectionContactsValues: NavSectionContactsItem[] = [
+export const navSectionContactsValues: INavSectionContactsItem[] = [
   {
     label: 'E-mail:',
     text: 'contato@leadster.com.br'
