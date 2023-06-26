@@ -1,21 +1,21 @@
 import { IconType } from 'react-icons/lib';
 
-interface NavSectionLink {
+interface INavSectionLink {
   text: string;
   url: string;
 }
 
-export interface NavSectionColum {
+export interface INavSectionColum {
   title: string;
-  links: NavSectionLink[];
+  links?: NavSectionLink[];
 }
 
-export interface NavSectionSocialMediaItem {
+export interface INavSectionSocialMediaItem {
   icon: IconType;
   url: string;
 }
 
-export interface NavSectionContactsItem {
+export interface INavSectionContactsItem {
   label: string;
   text: string;
 }

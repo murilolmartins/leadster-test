@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 
+import { GlobalStyles } from '@styles';
+
 import theme from '../styles/theme';
 
-import { GlobalStyles } from '@styles';
 import { ThemeProvider } from 'styled-components';
 
 interface StyledComponentsThemeProviderProps {

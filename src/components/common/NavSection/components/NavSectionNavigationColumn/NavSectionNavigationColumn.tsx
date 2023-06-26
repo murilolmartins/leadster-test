@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 
 import * as S from './NavSectionNavigationColumn.styles';
 
-import { NavSectionColum } from 'interfaces';
+import { INavSectionColum } from 'interfaces';
 
-type NavSectionNavigationColumnProps = Partial<NavSectionColum> & {
+type NavSectionNavigationColumnProps = INavSectionColum & {
   children?: ReactNode;
 };
 

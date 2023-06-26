@@ -1,4 +1,4 @@
-export interface FooterItem {
+export interface IFooterItem {
   text: string;
   link: {
     label: string;

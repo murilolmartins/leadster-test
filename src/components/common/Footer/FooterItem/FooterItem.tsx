@@ -1,8 +1,8 @@
-import { FooterItem } from '@interfaces';
+import { IFooterItem } from '@interfaces';
 
 import * as S from './FooterItem.styles';
 
-type FooterItemProps = FooterItem;
+type FooterItemProps = IFooterItem;
 
 const FooterItem = ({ text, link }: FooterItemProps) => {
   return (

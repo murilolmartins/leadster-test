@@ -1,6 +1,6 @@
-import * as S from './NavSectionHeader.styles';
-
 import logo from '@images/logo.png';
+
+import * as S from './NavSectionHeader.styles';
 
 const NavSectionHeader = () => {
   return (

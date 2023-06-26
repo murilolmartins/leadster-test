@@ -4,7 +4,7 @@ import { PageSection } from '../PageSection/PageSection';
 import { NavSectionContacts } from './components/NavSectionContacts/NavSectionContacts';
 import { NavSectionHeader } from './components/NavSectionHeader/NavSectionHeader';
 import { NavSectionNavigationColumn } from './components/NavSectionNavigationColumn/NavSectionNavigationColumn';
-import NavSectionSocialMedia from './components/NavSectionSocialMedia/NavSectionSocialMedia';
+import { NavSectionSocialMedia } from './components/NavSectionSocialMedia/NavSectionSocialMedia';
 import * as S from './NavSection.styles';
 
 import { nanoid } from 'nanoid';

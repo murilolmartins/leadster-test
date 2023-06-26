@@ -10,10 +10,10 @@ const NavSectionContacts = () => {
       <S.NavSectionContactsList>
         {navSectionContactsValues.map(({ label, text }) => (
           <S.NavSectionContactsItem key={nanoid()}>
-            <S.NavSectionContactLabel className="p_small">
+            <S.NavSectionContactLabel className="p_footer">
               {label}
             </S.NavSectionContactLabel>
-            <S.NavSectionContactText className="p_small">
+            <S.NavSectionContactText className="p_footer">
               {text}
             </S.NavSectionContactText>
           </S.NavSectionContactsItem>

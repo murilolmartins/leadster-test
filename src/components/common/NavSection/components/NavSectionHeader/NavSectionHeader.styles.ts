@@ -11,8 +11,11 @@ export const NavSectionHeaderContainer = styled.div`
 export const NavSectionHeaderImageContainer = styled.div``;
 
 export const NavSectionHeaderLogo = styled(Image)`
-  width: 100%;
+  width: 200px;
   height: auto;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 250px;
+  }
 `;
 
 export const NavSectionHeaderImageText = styled.p`
