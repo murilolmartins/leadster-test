@@ -11,17 +11,8 @@
     "start": "next start",
     "storybook": "storybook dev -p 6006",
     "test": "jest",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*": [
-      "yarn lint --fix"
-    ]
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "pre-commit-lint": "yarn typecheck && yarn lint-staged"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
