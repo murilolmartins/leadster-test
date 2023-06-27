@@ -5,10 +5,10 @@ export const FooterContainer = styled.footer`
   width: 100%;
   justify-content: center;
   display: flex;
-  padding: 20px 40px;
+  padding: 40px 20px;
   border-top: 0.5px solid ${({ theme }) => theme.colors.gray_100};
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
-    padding: 20px 150px;
+    padding: 40px 150px;
   }
 `;
 

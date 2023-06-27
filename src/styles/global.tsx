@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   ${({ theme }) => css`
     html {
       font-size: 62.5%;
-      font-family: ${theme.font.family};
+      font-family: ${theme.font.family} !important;
       color: ${theme.colors.black};
     }
 
@@ -22,11 +22,16 @@ const GlobalStyles = createGlobalStyle`
       background-color: ${theme.colors.gray_50};
     }
 
+    span,
+    p,
+    h1,
+    h2,
+    h3,
     body,
     input,
     textarea,
     button {
-      font-family: ${theme.font.family};
+      font-family: ${theme.font.family} !important;
     }
 
     p {
@@ -77,8 +82,26 @@ const GlobalStyles = createGlobalStyle`
       }
     }
 
+    h3 {
+      font-size: ${theme.font.sizes.xlarge};
+    }
+
     b {
       font-weight: ${theme.font.weight.semiBold};
+    }
+
+    .ant-spin-container {
+      padding: 50px 0px !important;
+      border-top: 1px solid ${theme.colors.gray_100} !important;
+      border-bottom: 1px solid ${theme.colors.gray_100} !important;
+    }
+
+    .ant-radio-button-wrapper {
+      border-radius: 15px !important;
+    }
+
+    .ant-radio-button-wrapper::before {
+      display: none !important;
     }
   `}
 
