@@ -1,12 +1,16 @@
 import { StyledComponentsThemeProvider } from './StyledComponentsThemeProvider';
 
+import { VideoModalProvider } from '@contexts';
+
 interface ProvidersProps {
   children: React.ReactNode;
 }
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <StyledComponentsThemeProvider>{children}</StyledComponentsThemeProvider>
+    <VideoModalProvider>
+      <StyledComponentsThemeProvider>{children}</StyledComponentsThemeProvider>
+    </VideoModalProvider>
   );
 };
 

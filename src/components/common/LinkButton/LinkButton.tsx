@@ -1,6 +1,8 @@
 import Link, { LinkProps } from 'next/link';
 import React, { forwardRef, ReactNode, Ref } from 'react';
 
+import { theme } from '@styles';
+
 import { LinkButtonType } from './LinkButton.enums';
 import * as S from './LinkButton.styles';
 
@@ -27,7 +29,7 @@ const LinkButton = (
 ) => (
   <Link href={href} as={as} prefetch={prefetch} locale={locale} passHref>
     <S.StyledLinkButton ref={ref} type="link" buttontype={buttontype} {...rest}>
-      <S.StyledLinkButtonText className="p_small">
+      <S.StyledLinkButtonText className={theme.p.classes.small}>
         {children}
       </S.StyledLinkButtonText>
     </S.StyledLinkButton>

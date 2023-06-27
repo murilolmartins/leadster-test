@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     p {
+      font-size: ${theme.font.sizes.medium};
+    }
+
+    .p_responsive_large {
       color: ${theme.colors.black};
       font-size: ${theme.font.sizes.xsmall};
       @media (min-width: ${theme.breakpoints.mobile_xl}) {
@@ -45,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
       }
     }
 
-    .p_small {
+    .p_responsive_small {
       font-size: ${theme.font.sizes.small};
       font-weight: ${theme.font.weight.bold};
       @media (min-width: ${theme.breakpoints.mobile_xl}) {
@@ -54,10 +58,6 @@ const GlobalStyles = createGlobalStyle`
       @media (min-width: ${theme.breakpoints.tablet}) {
         font-size: ${theme.font.sizes.medium};
       }
-    }
-
-    .p_footer {
-      font-size: ${theme.font.sizes.medium};
     }
 
     h1 {
@@ -102,6 +102,15 @@ const GlobalStyles = createGlobalStyle`
 
     .ant-radio-button-wrapper::before {
       display: none !important;
+    }
+
+    .ant-modal .ant-modal-content {
+      padding: 0px !important;
+      border-radius: 15px !important;
+    }
+
+    .video-modal > .ant-modal-content > .ant-modal-body {
+      padding: 0px !important;
     }
   `}
 

@@ -25,7 +25,7 @@ const VideoList = () => {
             alignItems: 'center',
             justifyContent: 'center'
           }}
-          grid={{ gutter: 18, xs: 1, sm: 1, md: 2, xl: 3, xxl: 3, lg: 2 }}
+          grid={{ gutter: 18, xs: 1, sm: 1, md: 2, xl: 3, xxl: 3, lg: 3 }}
           pagination={{
             position: 'bottom',
             align: 'center',
@@ -34,7 +34,12 @@ const VideoList = () => {
           dataSource={data}
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }}>
-              <VideoListCard thumbnail={item.thumbnail} title={item.title} />
+              <VideoListCard
+                thumbnail={item.thumbnail}
+                title={item.title}
+                url={item.url}
+                description={item.description}
+              />
             </List.Item>
           )}
         />

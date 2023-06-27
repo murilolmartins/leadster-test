@@ -5,11 +5,24 @@ import { theme } from '@styles';
 
 import * as S from './VideoListCard.styles';
 
-type VideoListCardProps = Pick<IVideoListItem, 'title' | 'thumbnail'>;
+import { useVideoModal } from '@contexts';
 
-const VideoListCard = ({ thumbnail, title }: VideoListCardProps) => {
+type VideoListCardProps = Pick<
+  IVideoListItem,
+  'title' | 'thumbnail' | 'description' | 'url'
+>;
+
+const VideoListCard = ({
+  thumbnail,
+  title,
+  url,
+  description
+}: VideoListCardProps) => {
+  const { handleOpenModal } = useVideoModal();
   return (
-    <S.VideoListCardContainer>
+    <S.VideoListCardContainer
+      onClick={() => handleOpenModal({ url, title, description })}
+    >
       <S.VideoListCardImageContainer>
         <S.VideoListCardImageOpacity className="hidden_play" />
         <S.VideoListCardImageIconContainer className="hidden_play">

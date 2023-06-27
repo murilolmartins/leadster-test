@@ -7,6 +7,12 @@ export default {
   box: {
     shadow: '0 8px 8px rgba(0, 0, 0, 0.08)'
   },
+  p: {
+    classes: {
+      small: 'p_responsive_small',
+      large: 'p_responsive_large'
+    }
+  },
   font: {
     family: plusJakarta.style.fontFamily,
     lineHeights: {
