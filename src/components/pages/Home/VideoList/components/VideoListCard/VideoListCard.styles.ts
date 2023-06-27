@@ -6,6 +6,7 @@ export const VideoListCardContainer = styled.div`
   box-shadow: 0 0 30px 5px rgba(28, 43, 76, 0.1);
   border: none;
   border-radius: 15px;
+  cursor: pointer;
   :hover {
     transform: scale(1.03);
     .hidden_play {

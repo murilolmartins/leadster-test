@@ -10,14 +10,14 @@ const HomeBanner = () => {
     <PageSection backgroudColor={theme.colors.light_blue}>
       <S.HomeBannerContainer>
         <S.HomeBannerTag>
-          <S.HomeBannerTagText className="p_small">
+          <S.HomeBannerTagText className={theme.p.classes.small}>
             WEBINARS EXCLUSIVOS
           </S.HomeBannerTagText>
         </S.HomeBannerTag>
         <S.HomeBannerTitle>Menos conversinha,</S.HomeBannerTitle>
         <HomeBannerColoredTitle />
         <S.HomeBannerDivisor />
-        <S.HomeBannerDescription>
+        <S.HomeBannerDescription className={theme.p.classes.large}>
           Conheça as estratégias que <b>mudaram o jogo</b> e como aplicá-las no
           seu negócio.
         </S.HomeBannerDescription>

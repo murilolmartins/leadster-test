@@ -10,7 +10,7 @@ export const videoListValues: IVideoListItem[] = Object.values(VideoCategory)
       title: `Como aumentar ${category} feat. Traktor ${i}`,
       category,
       description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis ultrices aliquam, nunc nisl ultricies nunc, quis ultrices nisl nisl eget nisl.`,
-      url: `https://www.youtube.com/watch?v=kvZxxVLApxw`,
+      url: `https://www.youtube.com/embed/kvZxxVLApxw`,
       thumbnail: thumbNail,
       createdAt: new Date(new Date().valueOf() - Math.random() * 1e12)
     }))

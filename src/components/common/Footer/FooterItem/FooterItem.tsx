@@ -7,7 +7,7 @@ type FooterItemProps = IFooterItem;
 const FooterItem = ({ text, link }: FooterItemProps) => {
   return (
     <S.FooterItemContainer>
-      <S.FooterItemText className="p_footer">{text}</S.FooterItemText>
+      <S.FooterItemText>{text}</S.FooterItemText>
       <S.FooterItemDivisor />
       <S.FooterItemLink href={link.url}>{link.label}</S.FooterItemLink>
     </S.FooterItemContainer>
