@@ -16,9 +16,9 @@ export const HeaderContainer = styled.header`
 
 export const HeaderLogo = styled(Image)`
   width: 100px;
-  height: 25px;
+  height: auto;
   @media (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
     width: 220px;
-    height: 50px;
+    height: auto;
   }
 `;

@@ -22,7 +22,8 @@
       "@components-layout": ["components/pages/index"],
       "@styles": ["styles/index"],
       "@interfaces": ["interfaces/index"],
-      "@providers": ["providers/index"]
+      "@providers": ["providers/index"],
+      "@enums": ["enums/index"],
     }
   },
 

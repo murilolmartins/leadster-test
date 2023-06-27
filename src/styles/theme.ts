@@ -30,8 +30,8 @@ export default {
     },
     sizes: {
       small: '8px',
-      xxsmall: '10px',
-      xsmall: '12px',
+      xxsmall: '12px',
+      xsmall: '10px',
       medium: '15px',
       large: '16px',
       xlarge: '18px',
