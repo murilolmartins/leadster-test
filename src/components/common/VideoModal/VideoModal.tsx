@@ -1,6 +1,7 @@
+import { useVideoModal } from '@hooks';
+
 import { VideoModalContent } from './VideoModalContent/VideoModalContent';
 
-import { useVideoModal } from '@contexts';
 import { Modal } from 'antd';
 
 const VideoModal = () => {

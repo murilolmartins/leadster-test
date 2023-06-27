@@ -65,7 +65,10 @@
             "/^@images/",
             "/^@styles/",
             "/^@interfaces/",
-            "/^@providers/"
+            "/^@providers/",
+            "/^@enums/",
+            "/^@contexts/",
+            "/^@hooks/"
           ],
           ["parent", "sibling", "index"]
         ],

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const VideoListContainer = styled.div`
+export const HomeVideoListContainer = styled.div`
   width: 100%;
   max-width: 1300px;
 `;
 
-export const VideoListSearchOptionsContainer = styled.div`
+export const HomeVideoListSearchOptionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px 0;

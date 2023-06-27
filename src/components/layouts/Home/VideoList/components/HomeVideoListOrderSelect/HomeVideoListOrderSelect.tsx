@@ -1,19 +1,21 @@
 import { RiArrowDownSFill } from 'react-icons/ri';
 
+import { VideoListKeys } from '@enums';
+import { useVideoList } from '@hooks';
 import { theme } from '@styles';
 
-import * as S from './VideoListOrderSelect.styles';
+import * as S from './HomeVideoListOrderSelect.styles';
 
-import { useVideoList } from '@contexts';
-import { VideoListKeys } from '@enums';
 import { Select } from 'antd';
 
-const VideoListOrderSelect = () => {
+const HomeVideoListOrderSelect = () => {
   const { handleOrderData, orderTerm } = useVideoList();
 
   return (
-    <S.VideoListOrderSelectContainer>
-      <S.VideoListOrderSelectText>Ordenar por:</S.VideoListOrderSelectText>
+    <S.HomeVideoListOrderSelectContainer>
+      <S.HomeVideoListOrderSelectText>
+        Ordenar por:
+      </S.HomeVideoListOrderSelectText>
       <Select
         defaultValue={orderTerm}
         style={{ width: 180 }}
@@ -24,8 +26,8 @@ const VideoListOrderSelect = () => {
         onChange={(value: VideoListKeys) => handleOrderData(value)}
         suffixIcon={<RiArrowDownSFill size={30} color={theme.colors.black} />}
       />
-    </S.VideoListOrderSelectContainer>
+    </S.HomeVideoListOrderSelectContainer>
   );
 };
 
-export { VideoListOrderSelect };
+export { HomeVideoListOrderSelect };

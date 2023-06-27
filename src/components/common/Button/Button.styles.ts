@@ -1,4 +1,5 @@
 import { ButtonType } from '@enums';
+
 import { Button } from 'antd';
 import styled, { css } from 'styled-components';
 
@@ -21,10 +22,10 @@ const ButtonTypeMap = {
 };
 
 interface ButtonContainerProps {
-  buttonType?: ButtonType;
+  buttontype?: ButtonType;
 }
 
 export const ButtonContainer = styled(Button)<ButtonContainerProps>`
   border-radius: 15px;
-  ${({ buttonType }) => buttonType && ButtonTypeMap[buttonType]}
+  ${({ buttontype }) => buttontype && ButtonTypeMap[buttontype]}
 `;

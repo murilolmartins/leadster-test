@@ -1,4 +1,4 @@
-import { LinkButtonType } from './LinkButton.enums';
+import { LinkButtonType } from '@enums';
 
 import { Button, ButtonProps } from 'antd';
 import styled, { css } from 'styled-components';

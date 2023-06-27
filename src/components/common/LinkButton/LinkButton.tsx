@@ -1,9 +1,9 @@
 import Link, { LinkProps } from 'next/link';
 import React, { forwardRef, ReactNode, Ref } from 'react';
 
+import { LinkButtonType } from '@enums';
 import { theme } from '@styles';
 
-import { LinkButtonType } from './LinkButton.enums';
 import * as S from './LinkButton.styles';
 
 import { ButtonProps } from 'antd';
