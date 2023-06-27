@@ -24,6 +24,7 @@
       "@interfaces": ["interfaces/index"],
       "@providers": ["providers/index"],
       "@enums": ["enums/index"],
+      "@contexts": ["context/index"],
     }
   },
 

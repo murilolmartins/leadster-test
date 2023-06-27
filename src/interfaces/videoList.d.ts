@@ -7,4 +7,5 @@ export interface IVideoListItem {
   description: string;
   thumbnail: StaticImageData;
   url: string;
+  createdAt: Date;
 }

@@ -5,3 +5,13 @@ export enum VideoCategory {
   DIGITAL_MARKETING = 'Marketing Digital',
   PAYED_MEDIA = 'Mídia Paga'
 }
+
+export enum VideoListKeys {
+  ID = 'id',
+  TITLE = 'title',
+  CATEGORY = 'category',
+  DESCRIPTION = 'description',
+  THUMBNAIL = 'thumbnail',
+  URL = 'url',
+  CREATED_AT = 'createdAt'
+}
