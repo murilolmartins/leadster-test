@@ -1,9 +1,9 @@
 import { videoListValues } from '@constants';
-import { VideoModalProvider } from '@contexts';
 
 import { VideoModal } from './VideoModal';
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { VideoModalProvider } from 'contexts';
 
 const props = {
   title: videoListValues[0].title,

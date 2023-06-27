@@ -13,7 +13,18 @@ const customJestConfig = {
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   moduleNameMapper: {
     '^styled-components':
-      '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js'
+      '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js',
+    '@components-common': '<rootDir>/src/components/common/index.ts',
+    '@components-layout': '<rootDir>/src/components/layouts/index.ts',
+    '@styles': '<rootDir>/src/styles/index.ts',
+    '@providers': '<rootDir>/src/utils/index.ts',
+    '@enums': '<rootDir>/src/enums/index.ts',
+    '@hooks': '<rootDir>/src/hooks/index.ts',
+    '@constants': '<rootDir>/src/services/index.ts',
+    '@images': '<rootDir>/src/types/index.ts',
+    '@interfaces': '<rootDir>/src/mocks/index.ts',
+    '@contexts': '<rootDir>/src/contexts/index.ts',
+    '^@test$': '<rootDir>/src/test/index.ts'
   }
 };
 

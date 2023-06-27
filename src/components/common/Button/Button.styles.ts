@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import styled, { css } from 'styled-components';
 
 const secondary = css`
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black} !important;
   background-color: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.black};
   :hover {

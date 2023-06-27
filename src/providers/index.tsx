@@ -1,6 +1,6 @@
-import { VideoModalProvider } from '@contexts';
-
 import { StyledComponentsThemeProvider } from './StyledComponentsThemeProvider';
+
+import { VideoModalProvider } from 'contexts';
 
 interface ProvidersProps {
   children: React.ReactNode;
