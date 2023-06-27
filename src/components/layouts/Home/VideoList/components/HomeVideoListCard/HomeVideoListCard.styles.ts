@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import styled from 'styled-components';
 
-export const VideoListCardContainer = styled.div`
+export const HomeVideoListCardContainer = styled.div`
   box-shadow: 0 0 30px 5px rgba(28, 43, 76, 0.1);
   border: none;
   border-radius: 15px;
@@ -16,25 +16,28 @@ export const VideoListCardContainer = styled.div`
       color: ${({ theme }) => theme.colors.primary};
     }
   }
+  max-width: 450px;
 `;
 
-export const VideoListCardImageContainer = styled.div`
+export const HomeVideoListCardImageContainer = styled.div`
   position: relative;
 `;
 
-export const VideoListCardImage = styled(Image)`
+export const HomeVideoListCardImage = styled(Image)`
   width: 100%;
   height: auto;
   border-radius: 15px 15px 0 0;
 `;
 
-export const VideoListCardInfoContainer = styled.div`
+export const HomeVideoListCardInfoContainer = styled.div`
   padding: 15px 40px;
+  background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 0 0 15px 15px;
 `;
 
-export const VideoListCardTitle = styled.h3``;
+export const HomeVideoListCardTitle = styled.h3``;
 
-export const VideoListCardImageOpacity = styled.div`
+export const HomeVideoListCardImageOpacity = styled.div`
   position: absolute;
   border-radius: 15px 15px 0 0;
   width: 100%;
@@ -45,7 +48,7 @@ export const VideoListCardImageOpacity = styled.div`
   display: none;
 `;
 
-export const VideoListCardImageIconContainer = styled.div`
+export const HomeVideoListCardImageIconContainer = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;

@@ -1,23 +1,22 @@
 import { Button } from '@components-common';
 import { videoListValues } from '@constants';
-
-import * as S from './VideoListSearchButtons.styles';
-
-import { useVideoList } from '@contexts';
 import { VideoCategory } from '@enums';
+import { useVideoList } from '@hooks';
 
-const VideoListSearchButtons = () => {
+import * as S from './HomeVideoListSearchButtons.styles';
+
+const HomeVideoListSearchButtons = () => {
   const { handleFilterData, setData } = useVideoList();
   return (
-    <S.VideoListSerchButtonsContainer>
+    <S.HomeVideoListSerchButtonsContainer>
       {Object.values(VideoCategory).map((category) => (
         <Button key={category} onClick={() => handleFilterData(category)}>
           {category}
         </Button>
       ))}
       <Button onClick={() => setData(videoListValues)}>Todos</Button>
-    </S.VideoListSerchButtonsContainer>
+    </S.HomeVideoListSerchButtonsContainer>
   );
 };
 
-export { VideoListSearchButtons };
+export { HomeVideoListSearchButtons };

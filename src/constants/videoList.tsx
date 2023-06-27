@@ -1,7 +1,6 @@
+import { VideoCategory } from '@enums';
 import thumbNail from '@images/thumbnail.png';
 import { IVideoListItem } from '@interfaces';
-
-import { VideoCategory } from '@enums';
 
 export const videoListValues: IVideoListItem[] = Object.values(VideoCategory)
   .map((category) =>

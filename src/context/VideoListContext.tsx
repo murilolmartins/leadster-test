@@ -4,15 +4,13 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
-  useContext,
   useEffect,
   useState
 } from 'react';
 
 import { videoListValues } from '@constants';
-import { IVideoListItem } from '@interfaces';
-
 import { VideoCategory, VideoListKeys } from '@enums';
+import { IVideoListItem } from '@interfaces';
 
 interface VideoListProviderProps {
   children: ReactNode;
@@ -26,7 +24,7 @@ interface VideoListProviderData {
   orderTerm: VideoListKeys;
 }
 
-const VideoListContext = createContext<VideoListProviderData>(
+export const VideoListContext = createContext<VideoListProviderData>(
   {} as VideoListProviderData
 );
 
@@ -85,5 +83,3 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
     </VideoListContext.Provider>
   );
 };
-
-export const useVideoList = () => useContext(VideoListContext);

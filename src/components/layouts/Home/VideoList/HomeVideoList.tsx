@@ -1,23 +1,23 @@
 import { PageSection } from '@components-common';
+import { useVideoList } from '@hooks';
 
-import { VideoListCard } from './components/VideoListCard/VideoListCard';
-import { VideoListOrderSelect } from './components/VideoListOrderSelect/VideoListOrderSelect';
-import { VideoListSearchButtons } from './components/VideoListSearchButtons/VIdeoListSeachButtons';
-import * as S from './VideoList.styles';
+import { HomeVideoListCard } from './components/HomeVideoListCard/HomeVideoListCard';
+import { HomeVideoListOrderSelect } from './components/HomeVideoListOrderSelect/HomeVideoListOrderSelect';
+import { HomeVideoListSearchButtons } from './components/HomeVideoListSearchButtons/HomeVIdeoListSearchButtons';
+import * as S from './HomeVideoList.styles';
 
-import { useVideoList } from '@contexts';
 import { List } from 'antd';
 
-const VideoList = () => {
+const HomeVideoList = () => {
   const { data } = useVideoList();
 
   return (
     <PageSection>
-      <S.VideoListContainer>
-        <S.VideoListSearchOptionsContainer>
-          <VideoListSearchButtons />
-          <VideoListOrderSelect />
-        </S.VideoListSearchOptionsContainer>
+      <S.HomeVideoListContainer>
+        <S.HomeVideoListSearchOptionsContainer>
+          <HomeVideoListSearchButtons />
+          <HomeVideoListOrderSelect />
+        </S.HomeVideoListSearchOptionsContainer>
         <List
           style={{
             display: 'flex',
@@ -34,7 +34,7 @@ const VideoList = () => {
           dataSource={data}
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }}>
-              <VideoListCard
+              <HomeVideoListCard
                 thumbnail={item.thumbnail}
                 title={item.title}
                 url={item.url}
@@ -43,9 +43,9 @@ const VideoList = () => {
             </List.Item>
           )}
         />
-      </S.VideoListContainer>
+      </S.HomeVideoListContainer>
     </PageSection>
   );
 };
 
-export { VideoList };
+export { HomeVideoList };

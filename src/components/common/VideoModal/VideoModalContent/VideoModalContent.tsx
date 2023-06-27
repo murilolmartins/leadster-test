@@ -1,8 +1,8 @@
 import { BsCloudDownload } from 'react-icons/bs';
 
-import * as S from './VideoModalContent.styles';
+import { useVideoModal } from '@hooks';
 
-import { useVideoModal } from '@contexts';
+import * as S from './VideoModalContent.styles';
 
 const VideoModalContent = () => {
   const { data } = useVideoModal();

@@ -1,5 +1,6 @@
+import { LinkButtonType } from '@enums';
+
 import LinkButton from './LinkButton';
-import { LinkButtonType } from './LinkButton.enums';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

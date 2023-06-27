@@ -6,6 +6,8 @@ export const VideoModalContentContainer = styled.div`
   border-top: 4px solid ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
+  max-width: 800px;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const VideoModalTitleContainer = styled.div`

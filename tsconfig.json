@@ -19,12 +19,13 @@
       "@constants": ["constants/index"],
       "@images/*": ["../public/images/*"],
       "@components-common": ["components/common/index"],
-      "@components-layout": ["components/pages/index"],
+      "@components-layout": ["components/layouts/index"],
       "@styles": ["styles/index"],
       "@interfaces": ["interfaces/index"],
       "@providers": ["providers/index"],
       "@enums": ["enums/index"],
       "@contexts": ["context/index"],
+      "@hooks": ["hooks/index"],
     }
   },
 

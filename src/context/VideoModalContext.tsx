@@ -3,7 +3,6 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
-  useContext,
   useState
 } from 'react';
 
@@ -13,6 +12,8 @@ type VideoModalData = Pick<IVideoListItem, 'url' | 'title' | 'description'>;
 
 interface VideoModalProviderProps {
   children: ReactNode;
+  initialVisible?: boolean;
+  initialData?: VideoModalData;
 }
 
 interface VideoModalProviderData {
@@ -23,13 +24,17 @@ interface VideoModalProviderData {
   setData: Dispatch<SetStateAction<VideoModalData>>;
 }
 
-const VideoModalContext = createContext<VideoModalProviderData>(
+export const VideoModalContext = createContext<VideoModalProviderData>(
   {} as VideoModalProviderData
 );
 
-export const VideoModalProvider = ({ children }: VideoModalProviderProps) => {
-  const [data, setData] = useState<VideoModalData>({} as VideoModalData);
-  const [isModalVisible, setIsModalVisible] = useState(false);
+export const VideoModalProvider = ({
+  children,
+  initialVisible = false,
+  initialData = {} as VideoModalData
+}: VideoModalProviderProps) => {
+  const [data, setData] = useState<VideoModalData>(initialData);
+  const [isModalVisible, setIsModalVisible] = useState(initialVisible);
 
   const handleOpenModal = (videoData: VideoModalData) => {
     setData(videoData);
@@ -54,5 +59,3 @@ export const VideoModalProvider = ({ children }: VideoModalProviderProps) => {
     </VideoModalContext.Provider>
   );
 };
-
-export const useVideoModal = () => useContext(VideoModalContext);
