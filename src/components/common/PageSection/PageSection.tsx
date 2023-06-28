@@ -4,12 +4,17 @@ import * as S from './PageSection.styles';
 
 interface PageSectionProps {
   backgroudColor?: string;
+  height?: string;
   children: ReactNode;
 }
 
-const PageSection = ({ backgroudColor, children }: PageSectionProps) => {
+const PageSection = ({
+  backgroudColor,
+  children,
+  height = 'auto'
+}: PageSectionProps) => {
   return (
-    <S.PageSectionContainer backgroundColor={backgroudColor}>
+    <S.PageSectionContainer height={height} backgroundColor={backgroudColor}>
       {children}
     </S.PageSectionContainer>
   );

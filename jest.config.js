@@ -24,7 +24,8 @@ const customJestConfig = {
     '@images': '<rootDir>/src/types/index.ts',
     '@interfaces': '<rootDir>/src/mocks/index.ts',
     '@contexts': '<rootDir>/src/contexts/index.ts',
-    '^@test$': '<rootDir>/src/test/index.ts'
+    '^@test$': '<rootDir>/src/test/index.ts',
+    '@utils': '<rootDir>/src/utils/index.ts'
   }
 };
 

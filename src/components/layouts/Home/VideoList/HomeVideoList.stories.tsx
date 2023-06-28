@@ -1,7 +1,8 @@
-import { HomeVideoList } from './HomeVideoList';
+import { VideoListProvider } from '@contexts';
+
+import HomeVideoList from './HomeVideoList';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { VideoListProvider } from 'contexts';
 
 const meta: Meta<typeof HomeVideoList> = {
   title: 'Sections/HomeVideoList',

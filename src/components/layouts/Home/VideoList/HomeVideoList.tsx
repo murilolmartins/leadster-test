@@ -9,7 +9,7 @@ import * as S from './HomeVideoList.styles';
 import { List } from 'antd';
 
 const HomeVideoList = () => {
-  const { data } = useVideoList();
+  const { data, isLoading } = useVideoList();
 
   return (
     <PageSection>
@@ -31,6 +31,7 @@ const HomeVideoList = () => {
             align: 'center',
             pageSize: 9
           }}
+          loading={isLoading}
           dataSource={data}
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }}>
@@ -47,4 +48,4 @@ const HomeVideoList = () => {
   );
 };
 
-export { HomeVideoList };
+export default HomeVideoList;

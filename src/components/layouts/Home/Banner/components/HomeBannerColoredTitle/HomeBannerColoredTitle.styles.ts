@@ -6,7 +6,7 @@ export const HomeBannerColoredTitleContainer = styled.div`
   position: relative;
 `;
 
-export const HomeBannerColoredTitleText = styled.h1`
+export const HomeBannerColoredTitleText = styled.p`
   background: ${({ theme }) => theme.colors.gradient.mainTheme};
   background-clip: text;
   -webkit-background-clip: text;
@@ -23,8 +23,12 @@ export const HomeBannerColoredTitleText = styled.h1`
 
 export const HomeBannerColoredTitleColoredImageContainer = styled.div`
   position: absolute;
-  top: 7px;
-  right: -6px;
+  top: 2px;
+  right: -8px;
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
+    top: 7px;
+    right: -6px;
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     top: 15px;
     right: -19px;

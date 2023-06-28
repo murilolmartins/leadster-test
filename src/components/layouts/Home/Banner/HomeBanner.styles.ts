@@ -9,7 +9,16 @@ export const HomeBannerContainer = styled.div`
   padding: 60px 0px;
 `;
 
-export const HomeBannerTitle = styled.h1``;
+export const HomeBannerTitle = styled.p`
+  font-size: ${({ theme }) => theme.font.sizes.xxlarge};
+  font-weight: ${({ theme }) => theme.font.weight.normal};
+  @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {
+    font-size: ${({ theme }) => theme.font.sizes.huge};
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.font.sizes.xxxhuge};
+  }
+`;
 
 export const HomeBannerTag = styled.div`
   padding: 2px 15px;
@@ -18,7 +27,7 @@ export const HomeBannerTag = styled.div`
   display: flex;
 `;
 
-export const HomeBannerTagText = styled.p`
+export const HomeBannerTagText = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
 `;
 

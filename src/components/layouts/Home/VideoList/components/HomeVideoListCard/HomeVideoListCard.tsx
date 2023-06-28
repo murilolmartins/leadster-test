@@ -27,7 +27,7 @@ const HomeVideoListCard = ({
         <S.HomeVideoListCardImageIconContainer className="hidden_play">
           <FaPlay color={theme.colors.white} size={50} />
         </S.HomeVideoListCardImageIconContainer>
-        <S.HomeVideoListCardImage src={thumbnail} alt={title} />
+        <S.HomeVideoListCardImage src={thumbnail} alt={title} priority />
       </S.HomeVideoListCardImageContainer>
       <S.HomeVideoListCardInfoContainer>
         <S.HomeVideoListCardTitle className="text_primary_color">
