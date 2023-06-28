@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const sortArray = (array: any[], key: string) => {
+export const sortArray = <T>(array: T[], key: keyof T): T[] => {
   return array.sort((a, b) => {
     if (a[key] < b[key]) {
       return -1;
