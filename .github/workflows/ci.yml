@@ -98,3 +98,32 @@ jobs:
 
           - name: Build 
             run: yarn build
+    
+     test:
+        name: Test
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
+        needs: [setup]
+        steps:
+          - name: Check out code
+            uses: actions/checkout@v3
+            with:
+              fetch-depth: 0
+
+          - name: Setup Node.js environment
+            uses: actions/setup-node@v3
+            with:
+              node-version: 18
+
+          - name: Restore yarn cache
+            id: yarn-cache
+            uses: actions/cache@v3
+            with:
+              path: |
+                node_modules
+                */*/node_modules
+              key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+              restore-keys: ${{ runner.os }}-yarn-
+
+          - name: Test 
+            run: yarn test
