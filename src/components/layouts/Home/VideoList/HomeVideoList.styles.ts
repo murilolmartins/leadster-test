@@ -12,3 +12,12 @@ export const HomeVideoListSearchOptionsContainer = styled.div`
   flex-wrap: wrap;
   gap: 20px;
 `;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.white};
+  height: 500px;
+  width: 100%;
+`;

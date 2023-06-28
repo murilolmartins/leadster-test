@@ -27,7 +27,7 @@ export const VideoModalSubtitle = styled.span`
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
 `;
 
-export const VideoModalTitle = styled.h1`
+export const VideoModalTitle = styled.h2`
   font-size: ${({ theme }) => theme.font.sizes.xxlarge};
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   color: ${({ theme }) => theme.colors.black};

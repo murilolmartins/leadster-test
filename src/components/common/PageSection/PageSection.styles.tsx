@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface PageSectionContainerProps {
   backgroundColor?: string;
+  height: string;
 }
 
 export const PageSectionContainer = styled.section<PageSectionContainerProps>`
@@ -9,6 +10,7 @@ export const PageSectionContainer = styled.section<PageSectionContainerProps>`
   justify-content: center;
   align-items: center;
   padding: 40px 24px;
+  height: ${({ height }) => height};
   background: ${({ backgroundColor, theme }) =>
     backgroundColor ?? theme.colors.white};
   @media (min-width: ${({ theme }) => theme.breakpoints.mobile_xl}) {

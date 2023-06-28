@@ -26,6 +26,7 @@ interface VideoListProviderData {
   setData: Dispatch<SetStateAction<IVideoListItem[]>>;
   handleResetData: () => void;
   orderTerm: VideoListKeys;
+  isLoading: boolean;
 }
 
 export const VideoListContext = createContext<VideoListProviderData>(
@@ -33,6 +34,7 @@ export const VideoListContext = createContext<VideoListProviderData>(
 );
 
 export const VideoListProvider = ({ children }: VideoListProviderProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [data, setData] = useState<IVideoListItem[]>([]);
   const [initialData, setInitialData] = useState<IVideoListItem[]>([]);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
@@ -64,6 +66,7 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
       .then((response) => {
         setData(sortArray(response.videos, orderTerm));
         setInitialData(response.videos);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
@@ -78,7 +81,8 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
         handleOrderData,
         handleResetData,
         setData,
-        orderTerm
+        orderTerm,
+        isLoading
       }}
     >
       {children}
