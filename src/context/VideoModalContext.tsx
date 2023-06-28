@@ -42,6 +42,9 @@ export const VideoModalProvider = ({
   };
 
   const handleCloseModal = () => {
+    const iframeModal = document.getElementById('responsive-iframe');
+
+    iframeModal?.setAttribute('src', iframeModal.getAttribute('src')!);
     setIsModalVisible(false);
   };
 

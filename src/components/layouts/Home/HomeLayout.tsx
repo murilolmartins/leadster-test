@@ -1,8 +1,13 @@
+import dynamic from 'next/dynamic';
+
 import { VideoListProvider } from '@contexts';
 
 import { HomeBanner } from './Banner/HomeBanner';
 import { HomeCTA } from './CTA/HomeCTA';
-import { HomeVideoList } from './VideoList/HomeVideoList';
+
+const HomeVideoList = dynamic(() => import('./VideoList/HomeVideoList'), {
+  ssr: false
+});
 
 const HomeLayout = () => {
   return (

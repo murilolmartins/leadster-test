@@ -11,9 +11,10 @@ const secondary = css`
     color: ${({ theme }) => theme.colors.primary};
     border: 1px solid ${({ theme }) => theme.colors.primary};
   }
-  ::selection {
-    background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors.primary};
+  :focus {
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
+    border: none;
   }
 `;
 

@@ -26,6 +26,7 @@
       "@enums": ["enums/index"],
       "@contexts": ["context/index"],
       "@hooks": ["hooks/index"],
+      "@utils": ["utils/index"],
     }
   },
 
