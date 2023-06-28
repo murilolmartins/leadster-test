@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const HomeBannerColoredTitleContainer = styled.div`
   position: relative;
+  max-width: fit-content;
 `;
 
 export const HomeBannerColoredTitleText = styled.p`
