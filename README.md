@@ -2,6 +2,12 @@
 
 Este é um teste realizado para a LEADSTER, em que o objetivo era criar uma home page utilizando Next.js + Styled Components.
 
+## Link do deploy
+
+
+https://leadster-test-nine.vercel.app/
+
+
 
 # Comandos de inicialização
 
@@ -173,7 +179,10 @@ Criei uma rota na api do next para simular uma integração com uma api externa 
 Como não e possivel acessar a api pelo server side do next, fiz a chamda dentro do cotexto mesmo.
 Pensando em um projeto com integração com uma api externa talvez não faria essa escolha. Usaria o React Query para realizar as requisições e fazer esse gerenciamento de estados para mim, 
 O context api e util mais acaba perdendo performance em aplicações maiores e com o React Query conseguiria tratar melhor os possíveis erros e não iria precisa usar useEffct para carregar o estado.
-Outra opção seria chamar essa rota no server side usando o getStaticProps e depois passaria para algum contexto ou hook. Isso evitiaria de ter que fazer requests no client e ja traria os dados prontos para serem usados do server. 
+Outra opção seria chamar essa rota no server side usando o getStaticProps e depois passaria para algum contexto ou hook. Isso evitiaria de ter que fazer requests no client e ja traria os dados prontos para serem usados do server.
+Carregar os dados no server side melhoraria performance do site que da forma que esta acaba ficando lentar por estar sendo carregado no client side.
+
+Outro problema que encontrei foi com a biblioteca do Antd. Ela causa diversos erros que prejudicam a usabilidade e SEO da pagina. Todos os erros ainda reportados vem da biblioteca e não do meu código.
 
 
 
