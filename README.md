@@ -175,12 +175,13 @@ Primeiro iniciei o repositório com todas as bibliotecas e realizei a configura�
 Durante o desenvolvimento do projeto não tive maiores dificuldades e consegui seguir oque decidi no começo.
 
 Apenas na seção de listagem dos videos acabei decidindo usar um contexto para compartilhar o estado e as fuções de filtragem em vários componentes.
+
 Criei uma rota na api do next para simular uma integração com uma api externa que retorna um array de videos.
-Como não e possivel acessar a api pelo server side do next, fiz a chamda dentro do cotexto mesmo.
-Pensando em um projeto com integração com uma api externa talvez não faria essa escolha. Usaria o React Query para realizar as requisições e fazer esse gerenciamento de estados para mim, 
+Como não e possivel acessar a api pelo server side do next, fiz a chamda dentro do contesto mesmo.
+
+Pensando em um projeto com integração com uma api externa talvez não faria essa escolha. Usaria o React Query para realizar as requisições e fazer esse gerenciamento de estados para mim. Utilizando o React Query eu poderia fazer o prefetch dos dados e carregar eles no server side e depois passar para um context ou hook junto com as funções de filtragem. Isso evitaria de ter que fazer requests no client e ja traria os dados prontos para serem usados do server.Esse senario seria possivel tanto no  caso de usar a pasta app como pages.
+
 O context api e util mais acaba perdendo performance em aplicações maiores e com o React Query conseguiria tratar melhor os possíveis erros e não iria precisa usar useEffct para carregar o estado.
-Outra opção seria chamar essa rota no server side usando o getStaticProps e depois passaria para algum contexto ou hook. Isso evitiaria de ter que fazer requests no client e ja traria os dados prontos para serem usados do server.
-Carregar os dados no server side melhoraria performance do site que da forma que esta acaba ficando lentar por estar sendo carregado no client side.
 
 Outro problema que encontrei foi com a biblioteca do Antd. Ela causa diversos erros que prejudicam a usabilidade e SEO da pagina. Todos os erros ainda reportados vem da biblioteca e não do meu código.
 
