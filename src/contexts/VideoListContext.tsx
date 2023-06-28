@@ -35,7 +35,10 @@ export const VideoListContext = createContext<VideoListProviderData>(
 );
 
 export const VideoListProvider = ({ children }: VideoListProviderProps) => {
-  const [data, setData] = useState<Data>({} as Data);
+  const [data, setData] = useState<Data>({
+    search: [],
+    initialData: []
+  } as Data);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
     VideoListKeys.CREATED_AT
   );
