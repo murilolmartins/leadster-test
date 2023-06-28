@@ -1,6 +1,6 @@
 import { VideoListProvider } from '@contexts';
 
-import HomeVideoList from './HomeVideoList';
+import { HomeVideoList } from './HomeVideoList';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

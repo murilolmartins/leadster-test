@@ -9,11 +9,7 @@ const HomeVideoListSearchButtons = () => {
   return (
     <S.HomeVideoListSerchButtonsContainer>
       {Object.values(VideoCategory).map((category) => (
-        <Button
-          key={category}
-          onClick={() => handleFilterData(category)}
-          autoFocus
-        >
+        <Button key={category} onClick={() => handleFilterData(category)}>
           {category}
         </Button>
       ))}
