@@ -14,6 +14,8 @@ import { connectionAPIGet, sortArray } from '@utils';
 
 interface VideoListProviderProps {
   children: ReactNode;
+  initialData?: Data;
+  initialLoading?: boolean;
 }
 
 interface Data {
@@ -34,15 +36,16 @@ export const VideoListContext = createContext<VideoListProviderData>(
   {} as VideoListProviderData
 );
 
-export const VideoListProvider = ({ children }: VideoListProviderProps) => {
-  const [data, setData] = useState<Data>({
-    search: [],
-    initialData: []
-  } as Data);
+export const VideoListProvider = ({
+  initialLoading = true,
+  initialData = { search: [], initialData: [] },
+  children
+}: VideoListProviderProps) => {
+  const [data, setData] = useState<Data>(initialData);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
     VideoListKeys.CREATED_AT
   );
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(initialLoading);
 
   const handleOrderData = (newOrderTerm: VideoListKeys) => {
     console.log(data.search);
