@@ -1,11 +1,13 @@
-import { StaticImageData } from 'next/image';
-
 export interface IVideoListItem {
   id: number;
   title: string;
   category: string;
   description: string;
-  thumbnail: StaticImageData;
+  thumbnail: string;
   url: string;
-  createdAt: Date;
+  createdAt: string;
+}
+
+export interface VideoApiResponse {
+  videos: IVideoListItem[];
 }

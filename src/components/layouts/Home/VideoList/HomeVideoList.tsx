@@ -35,7 +35,6 @@ const HomeVideoList = () => {
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }}>
               <HomeVideoListCard
-                thumbnail={item.thumbnail}
                 title={item.title}
                 url={item.url}
                 description={item.description}
@@ -48,4 +47,4 @@ const HomeVideoList = () => {
   );
 };
 
-export { HomeVideoList };
+export default HomeVideoList;

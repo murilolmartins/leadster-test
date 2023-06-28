@@ -4,15 +4,18 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useContext,
   useEffect,
   useState
 } from 'react';
 
-import { videoListValues } from '@constants';
 import { VideoCategory, VideoListKeys } from '@enums';
-import { IVideoListItem } from '@interfaces';
+import { IVideoListItem, VideoApiResponse } from '@interfaces';
+
+import { connectionAPIGet, sortArray } from '@utils';
 
 interface VideoListProviderProps {
+  initialData?: IVideoListItem[];
   children: ReactNode;
 }
 
@@ -21,6 +24,7 @@ interface VideoListProviderData {
   handleFilterData: (searchTerm: VideoCategory) => void;
   handleOrderData: (orderTerm: VideoListKeys) => void;
   setData: Dispatch<SetStateAction<IVideoListItem[]>>;
+  handleResetData: () => void;
   orderTerm: VideoListKeys;
 }
 
@@ -29,44 +33,41 @@ export const VideoListContext = createContext<VideoListProviderData>(
 );
 
 export const VideoListProvider = ({ children }: VideoListProviderProps) => {
-  const [data, setData] = useState<IVideoListItem[]>(videoListValues);
+  const [data, setData] = useState<IVideoListItem[]>([]);
+  const [initialData, setInitialData] = useState<IVideoListItem[]>([]);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
     VideoListKeys.CREATED_AT
   );
 
   const handleOrderData = (newOrderTerm: VideoListKeys) => {
-    const orderedData = data.sort((a, b) => {
-      if (a[newOrderTerm] < b[newOrderTerm]) {
-        return -1;
-      }
-      if (a[newOrderTerm] > b[newOrderTerm]) {
-        return 1;
-      }
-      return 0;
-    });
+    const orderedData = sortArray(data, newOrderTerm);
 
     setOrderTerm(newOrderTerm);
     setData(() => [...orderedData]);
   };
 
   const handleFilterData = (searchTerm: VideoCategory) => {
-    const filteredData = videoListValues
-      .filter(({ category }) => category.includes(searchTerm))
-      .sort((a, b) => {
-        if (a[orderTerm] < b[orderTerm]) {
-          return -1;
-        }
-        if (a[orderTerm] > b[orderTerm]) {
-          return 1;
-        }
-        return 0;
-      });
+    const filteredData = sortArray(
+      initialData.filter(({ category }) => category.includes(searchTerm)),
+      orderTerm
+    );
 
     setData(filteredData);
   };
 
+  const handleResetData = () => {
+    setData(sortArray(initialData, orderTerm));
+  };
+
   useEffect(() => {
-    handleOrderData(orderTerm);
+    connectionAPIGet<VideoApiResponse>('/api/videos')
+      .then((response) => {
+        setData(sortArray(response.videos, orderTerm));
+        setInitialData(response.videos);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -75,6 +76,7 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
         data,
         handleFilterData,
         handleOrderData,
+        handleResetData,
         setData,
         orderTerm
       }}
@@ -83,3 +85,5 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
     </VideoListContext.Provider>
   );
 };
+
+export const useVideoList = () => useContext(VideoListContext);
