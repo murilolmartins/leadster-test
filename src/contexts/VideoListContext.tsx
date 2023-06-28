@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
   createContext,
-  Dispatch,
   ReactNode,
-  SetStateAction,
   useContext,
   useEffect,
   useState
@@ -15,15 +13,18 @@ import { IVideoListItem, VideoApiResponse } from '@interfaces';
 import { connectionAPIGet, sortArray } from '@utils';
 
 interface VideoListProviderProps {
-  initialData?: IVideoListItem[];
   children: ReactNode;
 }
 
+interface Data {
+  initialData: IVideoListItem[];
+  search: IVideoListItem[];
+}
+
 interface VideoListProviderData {
-  data: IVideoListItem[];
+  data: Data;
   handleFilterData: (searchTerm: VideoCategory) => void;
   handleOrderData: (orderTerm: VideoListKeys) => void;
-  setData: Dispatch<SetStateAction<IVideoListItem[]>>;
   handleResetData: () => void;
   orderTerm: VideoListKeys;
   isLoading: boolean;
@@ -34,38 +35,53 @@ export const VideoListContext = createContext<VideoListProviderData>(
 );
 
 export const VideoListProvider = ({ children }: VideoListProviderProps) => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [data, setData] = useState<IVideoListItem[]>([]);
-  const [initialData, setInitialData] = useState<IVideoListItem[]>([]);
+  const [data, setData] = useState<Data>({} as Data);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
     VideoListKeys.CREATED_AT
   );
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleOrderData = (newOrderTerm: VideoListKeys) => {
-    const orderedData = sortArray(data, newOrderTerm);
-
+    console.log(data.search);
     setOrderTerm(newOrderTerm);
-    setData(() => [...orderedData]);
+    setData((previosData) => {
+      return {
+        ...previosData,
+        search: sortArray(previosData.search, newOrderTerm)
+      };
+    });
   };
 
   const handleFilterData = (searchTerm: VideoCategory) => {
     const filteredData = sortArray(
-      initialData.filter(({ category }) => category.includes(searchTerm)),
+      data.initialData.filter(({ category }) => category.includes(searchTerm)),
       orderTerm
     );
 
-    setData(filteredData);
+    setData((previosData) => {
+      return {
+        ...previosData,
+        search: filteredData
+      };
+    });
   };
 
   const handleResetData = () => {
-    setData(sortArray(initialData, orderTerm));
+    setData((previosData) => {
+      return {
+        ...previosData,
+        search: sortArray(previosData.initialData, orderTerm)
+      };
+    });
   };
 
   useEffect(() => {
     connectionAPIGet<VideoApiResponse>('/api/videos')
       .then((response) => {
-        setData(sortArray(response.videos, orderTerm));
-        setInitialData(response.videos);
+        setData({
+          initialData: response.videos,
+          search: sortArray(response.videos, orderTerm)
+        });
         setIsLoading(false);
       })
       .catch((error) => {
@@ -80,7 +96,6 @@ export const VideoListProvider = ({ children }: VideoListProviderProps) => {
         handleFilterData,
         handleOrderData,
         handleResetData,
-        setData,
         orderTerm,
         isLoading
       }}
