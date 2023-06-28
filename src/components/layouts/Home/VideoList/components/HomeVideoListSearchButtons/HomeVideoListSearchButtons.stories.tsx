@@ -1,8 +1,7 @@
-import { VideoListProvider } from '@contexts';
-
 import { HomeVideoListSearchButtons } from './HomeVIdeoListSearchButtons';
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { VideoListProvider } from 'contexts';
 
 const meta: Meta<typeof HomeVideoListSearchButtons> = {
   title: 'Sections/HomeVideoList/Components/HomeVideoListSearchButtons',

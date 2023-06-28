@@ -1,9 +1,9 @@
 import { videoListValues } from '@constants';
-import { VideoModalProvider } from '@contexts';
 
 import { HomeVideoListCard } from './HomeVideoListCard';
 
 import type { Meta, StoryObj } from '@storybook/react';
+import { VideoModalProvider } from 'contexts';
 
 const meta: Meta<typeof HomeVideoListCard> = {
   title: 'Sections/HomeVideoList/Components/HomeVideoListCard',

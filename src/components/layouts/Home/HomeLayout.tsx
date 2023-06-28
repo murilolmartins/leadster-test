@@ -1,8 +1,8 @@
-import { VideoListProvider } from '@contexts';
-
 import { HomeBanner } from './Banner/HomeBanner';
 import { HomeCTA } from './CTA/HomeCTA';
 import { HomeVideoList } from './VideoList/HomeVideoList';
+
+import { VideoListProvider } from 'contexts';
 
 const HomeLayout = () => {
   return (
