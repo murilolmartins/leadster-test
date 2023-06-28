@@ -32,7 +32,7 @@ const HomeVideoList = () => {
             pageSize: 9
           }}
           loading={isLoading}
-          dataSource={data}
+          dataSource={data.search.length > 0 ? data.search : data.initialData}
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }}>
               <HomeVideoListCard
