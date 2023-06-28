@@ -75,14 +75,17 @@ export const navSectionLinksValues: INavSectionColum[] = [
 
 export const navSectionSocialMediaValues: INavSectionSocialMediaItem[] = [
   {
+    title: 'LinkdIn',
     icon: BiLogoLinkedin,
     url: 'https://www.linkedin.com/company/leadster-platform'
   },
   {
+    title: 'Facebook',
     icon: BiLogoFacebook,
     url: 'https://www.facebook.com/leadsterplatform'
   },
   {
+    title: 'Instagram',
     icon: BsInstagram,
     url: 'https://www.instagram.com/leadster.com.br'
   }

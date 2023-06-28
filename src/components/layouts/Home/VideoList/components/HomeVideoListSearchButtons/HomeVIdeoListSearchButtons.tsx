@@ -1,12 +1,11 @@
 import { Button } from '@components-common';
-import { videoListValues } from '@constants';
 import { VideoCategory } from '@enums';
 import { useVideoList } from '@hooks';
 
 import * as S from './HomeVideoListSearchButtons.styles';
 
 const HomeVideoListSearchButtons = () => {
-  const { handleFilterData, setData } = useVideoList();
+  const { handleFilterData, handleResetData } = useVideoList();
   return (
     <S.HomeVideoListSerchButtonsContainer>
       {Object.values(VideoCategory).map((category) => (
@@ -14,7 +13,7 @@ const HomeVideoListSearchButtons = () => {
           {category}
         </Button>
       ))}
-      <Button onClick={() => setData(videoListValues)}>Todos</Button>
+      <Button onClick={handleResetData}>Todos</Button>
     </S.HomeVideoListSerchButtonsContainer>
   );
 };

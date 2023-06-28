@@ -17,7 +17,7 @@
     "incremental": true,
     "paths": {
       "@constants": ["constants/index"],
-      "@images/*": ["../public/images/*"],
+      "@images/*": ["../public/static/images/*"],
       "@components-common": ["components/common/index"],
       "@components-layout": ["components/layouts/index"],
       "@styles": ["styles/index"],
@@ -26,7 +26,8 @@
       "@enums": ["enums/index"],
       "@contexts": ["contexts/index"],
       "@hooks": ["hooks/index"],
-      "@test": ["test/index"]
+      "@test": ["test/index"],
+      "@utils": ["utils/index"],
     }
   },
 

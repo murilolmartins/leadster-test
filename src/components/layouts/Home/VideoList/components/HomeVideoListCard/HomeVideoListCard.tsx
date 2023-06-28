@@ -1,6 +1,7 @@
 import { FaPlay } from 'react-icons/fa';
 
 import { useVideoModal } from '@hooks';
+import thumbnail from '@images/thumbnail.png';
 import { IVideoListItem } from '@interfaces';
 import { theme } from '@styles';
 
@@ -8,11 +9,10 @@ import * as S from './HomeVideoListCard.styles';
 
 type HomeVideoListCardProps = Pick<
   IVideoListItem,
-  'title' | 'thumbnail' | 'description' | 'url'
+  'title' | 'description' | 'url'
 >;
 
 const HomeVideoListCard = ({
-  thumbnail,
   title,
   url,
   description

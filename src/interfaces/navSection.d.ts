@@ -11,6 +11,7 @@ export interface INavSectionColum {
 }
 
 export interface INavSectionSocialMediaItem {
+  title: string;
   icon: IconType;
   url: string;
 }

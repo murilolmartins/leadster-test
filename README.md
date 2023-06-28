@@ -147,6 +147,8 @@ Pasta com as interfaces utilizadas em mais de um local no app.
 
 Pasta com as paginas do app.
 
+Esta contem uma rota em sua api chamada videos que retorna um array de videos, simulando uma integração com uma api externa.
+
 ### providers
 
 Pasta com os providers utilizados por toda a app, como provedores de tema e contextos.
@@ -155,6 +157,10 @@ Pasta com os providers utilizados por toda a app, como provedores de tema e cont
 
 Pasta com o tema e o global styles do app.
 
+### utils
+
+Pasta com as funções utilitárias utilizadas em mais de um local no app.
+
 
 ## Criando o projeto
 
@@ -162,8 +168,12 @@ Primeiro iniciei o repositório com todas as bibliotecas e realizei a configura�
 
 Durante o desenvolvimento do projeto não tive maiores dificuldades e consegui seguir oque decidi no começo.
 
-Apenas na seção de lista paginação acabei decidindo usar um contexto para compartilhar o estado em vários componentes. Pensando em um projeto com integração com uma api talvez não faria essa escolha. Usaria o React Query para realizar as requisições e fazer esse gerenciamento de estados para mim. O context api e util mais acaba perdendo performance em aplicações maiores e com o React Query conseguiria tratar melhor os possíveis erros e não iria precisa um useEffct para carregar o estado.
+Apenas na seção de listagem dos videos acabei decidindo usar um contexto para compartilhar o estado e as fuções de filtragem em vários componentes.
+Criei uma rota na api do next para simular uma integração com uma api externa que retorna um array de videos.
+Como não e possivel acessar a api pelo server side do next, fiz a chamda dentro do cotexto mesmo.
+Pensando em um projeto com integração com uma api externa talvez não faria essa escolha. Usaria o React Query para realizar as requisições e fazer esse gerenciamento de estados para mim, 
+O context api e util mais acaba perdendo performance em aplicações maiores e com o React Query conseguiria tratar melhor os possíveis erros e não iria precisa usar useEffct para carregar o estado.
+Outra opção seria chamar essa rota no server side usando o getStaticProps e depois passaria para algum contexto ou hook. Isso evitiaria de ter que fazer requests no client e ja traria os dados prontos para serem usados do server. 
 
-Para impedir erros durante o desenvolvimento adicionei github actions.
-Em todas as prs ele roda o build, lint e os testes para verificar a integridade da mesma. 
+
 

@@ -1,6 +1,6 @@
+import { PageSection } from '@components-common';
 import { navSectionLinksValues } from '@constants';
 
-import { PageSection } from '../PageSection/PageSection';
 import { NavSectionContacts } from './components/NavSectionContacts/NavSectionContacts';
 import { NavSectionHeader } from './components/NavSectionHeader/NavSectionHeader';
 import { NavSectionNavigationColumn } from './components/NavSectionNavigationColumn/NavSectionNavigationColumn';

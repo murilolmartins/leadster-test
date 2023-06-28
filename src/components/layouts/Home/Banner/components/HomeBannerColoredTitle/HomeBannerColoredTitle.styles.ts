@@ -23,19 +23,18 @@ export const HomeBannerColoredTitleText = styled.h1`
 
 export const HomeBannerColoredTitleColoredImageContainer = styled.div`
   position: absolute;
-  top: 2px;
-  right: -10px;
+  top: 7px;
+  right: -6px;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    top: 11px;
-    right: -15px;
+    top: 15px;
+    right: -19px;
   }
 `;
 
 export const HomeBannerColoredTitleColoredImage = styled(Image)`
-  height: 15px;
+  height: auto;
   width: 20px;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    height: 35px;
     width: 50px;
   }
 `;
