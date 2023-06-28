@@ -47,4 +47,4 @@ const HomeVideoList = () => {
   );
 };
 
-export default HomeVideoList;
+export { HomeVideoList };
