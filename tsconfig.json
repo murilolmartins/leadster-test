@@ -24,8 +24,9 @@
       "@interfaces": ["interfaces/index"],
       "@providers": ["providers/index"],
       "@enums": ["enums/index"],
-      "@contexts": ["context/index"],
+      "@contexts": ["contexts/index"],
       "@hooks": ["hooks/index"],
+      "@test": ["test/index"],
       "@utils": ["utils/index"],
     }
   },
