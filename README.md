@@ -60,7 +60,7 @@ Para ter um controle do nome dos meus componentes e tornar o código mais amigá
 
 Tendo em vista que precisaria renderizar uma lista de items utilizando paginação e criar um modal decidi usar a biblioteca ANTD, poise e simples de se usar, mais leve que as outras. A ideia e utilizar componentes mais complexos delas e não usar ela para criar divs ou textos.
 
-Decidi usar jest para realizar os unitários e cypress para testes E2E.
+Decidi usar jest para realizar os unitários e de integração e cypress para testes E2E.
 
 Husky + lint-staged + commitlint para controle dos commits e evitar que erros subam para o repositório.
 
@@ -182,7 +182,9 @@ Pensando em um projeto com integração com uma api externa talvez não faria es
 
 O context api e util mais acaba perdendo performance em aplicações maiores e com o React Query conseguiria tratar melhor os possíveis erros e não iria precisa usar useEffct para carregar o estado.
 
-Outro problema que encontrei foi com a biblioteca do Antd. Ela causa diversos erros que prejudicam a usabilidade e SEO da pagina. Todos os erros ainda reportados vem da biblioteca e não do meu código.
+Outro problema que encontrei foi com a biblioteca do Antd. Ela causa diversos erros que prejudicam a usabilidade e SEO da pagina. Todos os erros ainda reportados vem da biblioteca e não do meu código. Para continuar o projeto acredito que trocaria o Antd pelo radix ou outra biblioteca leve e sem extilização ja que eu so iria utilizar os componentes mais complexos dela e não quero problemas com o SEO e acessibilidade do app.
+
+
 
 
 
