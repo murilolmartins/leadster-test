@@ -31,7 +31,11 @@ export const VideoModalContext = createContext<VideoModalProviderData>(
 export const VideoModalProvider = ({
   children,
   initialVisible = false,
-  initialData = {} as VideoModalData
+  initialData = {
+    description: '',
+    title: '',
+    url: ''
+  } as VideoModalData
 }: VideoModalProviderProps) => {
   const [data, setData] = useState<VideoModalData>(initialData);
   const [isModalVisible, setIsModalVisible] = useState(initialVisible);
