@@ -1,11 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 import { VideoCategory, VideoListKeys } from '@enums';
 import { IVideoListItem, VideoApiResponse } from '@interfaces';
@@ -110,5 +104,3 @@ export const VideoListProvider = ({
     </VideoListContext.Provider>
   );
 };
-
-export const useVideoList = () => useContext(VideoListContext);
