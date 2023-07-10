@@ -7,7 +7,7 @@ interface INavSectionLink {
 
 export interface INavSectionColum {
   title: string;
-  links?: NavSectionLink[];
+  links?: INavSectionLink[];
 }
 
 export interface INavSectionSocialMediaItem {
