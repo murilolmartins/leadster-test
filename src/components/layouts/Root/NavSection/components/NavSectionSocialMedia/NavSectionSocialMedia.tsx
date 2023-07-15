@@ -2,14 +2,12 @@ import { navSectionSocialMediaValues } from '@constants';
 
 import * as S from './NavSectionSocialMedia.styles';
 
-import { nanoid } from 'nanoid';
-
 const NavSectionSocialMedia = () => {
   return (
     <S.NavSectionSocialMediaContainer>
       <S.NavSectionSocialMediaList>
         {navSectionSocialMediaValues.map(({ url, icon: Icon, title }) => (
-          <S.NavSectionSocialMediaListItem key={nanoid()}>
+          <S.NavSectionSocialMediaListItem key={title}>
             <S.NavSectionSocialMediaLink
               href={url}
               target="_blank"

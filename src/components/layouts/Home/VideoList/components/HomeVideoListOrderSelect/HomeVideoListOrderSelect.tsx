@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { RiArrowDownSFill } from 'react-icons/ri';
 
 import { VideoListKeys } from '@enums';
@@ -35,4 +36,4 @@ const HomeVideoListOrderSelect = ({
   );
 };
 
-export { HomeVideoListOrderSelect };
+export default memo(HomeVideoListOrderSelect);

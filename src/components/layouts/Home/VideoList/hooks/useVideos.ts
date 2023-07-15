@@ -2,10 +2,10 @@
 import { useCallback, useState } from 'react';
 
 import { VideoCategory, VideoListKeys } from '@enums';
+import { useFetchVideos } from '@hooks';
 import { IVideoListItem } from '@interfaces';
 
 import { sortArray } from '@utils';
-import { useFetchVideos } from 'hooks/useFetchVideos';
 
 export const useVideos = () => {
   const { data: videos, isLoading } = useFetchVideos();
@@ -14,18 +14,15 @@ export const useVideos = () => {
     VideoListKeys.CREATED_AT
   );
 
-  const handleOrderSearchVideos = useCallback(
-    (newOrderTerm: VideoListKeys) => {
-      setSearchVideos([
-        ...sortArray(
-          searchVideos.length > 0 ? searchVideos : videos,
-          newOrderTerm
-        )
-      ]);
-      setOrderTerm(newOrderTerm);
-    },
-    [videos]
-  );
+  const handleOrderSearchVideos = (newOrderTerm: VideoListKeys) => {
+    setSearchVideos([
+      ...sortArray(
+        searchVideos.length > 0 ? searchVideos : videos,
+        newOrderTerm
+      )
+    ]);
+    setOrderTerm(newOrderTerm);
+  };
 
   const handleFilterSearchVideos = useCallback(
     (searchCategory: VideoCategory) => {

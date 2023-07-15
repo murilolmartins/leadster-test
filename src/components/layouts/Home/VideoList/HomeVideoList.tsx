@@ -1,8 +1,9 @@
 import { PageSection } from '@components-common';
 
 import { HomeVideoListCard } from './components/HomeVideoListCard/HomeVideoListCard';
-import { HomeVideoListOrderSelect } from './components/HomeVideoListOrderSelect/HomeVideoListOrderSelect';
-import { HomeVideoListSearchButtons } from './components/HomeVideoListSearchButtons/HomeVIdeoListSearchButtons';
+import HomeVideoListHeader from './components/HomeVideoListHeader/HomeVideoListHeader';
+import HomeVideoListOrderSelect from './components/HomeVideoListOrderSelect/HomeVideoListOrderSelect';
+import HomeVideoListSearchButtons from './components/HomeVideoListSearchButtons/HomeVIdeoListSearchButtons';
 import * as S from './HomeVideoList.styles';
 import { useVideos } from './hooks/useVideos';
 
@@ -22,7 +23,7 @@ const HomeVideoList = () => {
   return (
     <PageSection>
       <S.HomeVideoListContainer>
-        <S.HomeVideoListSearchOptionsContainer>
+        <HomeVideoListHeader>
           <HomeVideoListSearchButtons
             handleFilterSearchVideos={handleFilterSearchVideos}
             handleResetSearchVideos={handleResetSearchVideos}
@@ -31,7 +32,7 @@ const HomeVideoList = () => {
             handleOrderSearchVideos={handleOrderSearchVideos}
             orderTerm={orderTerm}
           />
-        </S.HomeVideoListSearchOptionsContainer>
+        </HomeVideoListHeader>
         <List
           style={{
             display: 'flex',
@@ -48,7 +49,7 @@ const HomeVideoList = () => {
           loading={isLoading}
           dataSource={searchVideos.length > 0 ? searchVideos : videos}
           renderItem={(item) => (
-            <List.Item style={{ padding: '20px' }}>
+            <List.Item style={{ padding: '20px' }} key={item.id}>
               <HomeVideoListCard
                 title={item.title}
                 url={item.url}

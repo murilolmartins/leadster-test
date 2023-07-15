@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { Button } from '@components-common';
 import { VideoCategory } from '@enums';
 
@@ -27,4 +29,4 @@ const HomeVideoListSearchButtons = ({
   );
 };
 
-export { HomeVideoListSearchButtons };
+export default memo(HomeVideoListSearchButtons);

@@ -1,4 +1,4 @@
-import { HomeVideoListSearchButtons } from './HomeVIdeoListSearchButtons';
+import HomeVideoListSearchButtons from './HomeVIdeoListSearchButtons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { VideoListProvider } from 'contexts';

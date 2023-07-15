@@ -1,6 +1,6 @@
 import { VideoListKeys } from '@enums';
 
-import { HomeVideoListOrderSelect } from './HomeVideoListOrderSelect';
+import HomeVideoListOrderSelect from './HomeVideoListOrderSelect';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
