@@ -57,7 +57,7 @@ export default {
     gray_100: '#d1d1d1',
     gray_200: '#677294',
     gray_300: '#343a40',
-    light_blue: '#e9ecf3',
+    light_blue: '#f9fcff',
     blue_100: '#00aff0',
     purple_100: '#7F57DF',
     purple_300: '#5855E9',
