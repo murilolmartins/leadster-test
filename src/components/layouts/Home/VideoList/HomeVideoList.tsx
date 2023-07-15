@@ -16,8 +16,7 @@ const HomeVideoList = () => {
     handleFilterSearchVideos,
     handleOrderSearchVideos,
     handleResetSearchVideos,
-    videos,
-    isLoading
+    videos
   } = useVideos();
 
   return (
@@ -46,7 +45,7 @@ const HomeVideoList = () => {
             align: 'center',
             pageSize: 9
           }}
-          loading={isLoading}
+          loading={videos.length === 0}
           dataSource={searchVideos.length > 0 ? searchVideos : videos}
           renderItem={(item) => (
             <List.Item style={{ padding: '20px' }} key={item.id}>

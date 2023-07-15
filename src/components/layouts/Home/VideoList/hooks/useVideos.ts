@@ -8,11 +8,12 @@ import { IVideoListItem } from '@interfaces';
 import { sortArray } from '@utils';
 
 export const useVideos = () => {
-  const { data: videos, isLoading } = useFetchVideos();
+  const { data, isLoading } = useFetchVideos();
   const [searchVideos, setSearchVideos] = useState<IVideoListItem[]>([]);
   const [orderTerm, setOrderTerm] = useState<VideoListKeys>(
     VideoListKeys.CREATED_AT
   );
+  const videos = [...sortArray(data, orderTerm)];
 
   const handleOrderSearchVideos = (newOrderTerm: VideoListKeys) => {
     setSearchVideos([
@@ -32,7 +33,7 @@ export const useVideos = () => {
       );
       setSearchVideos(fiteredList);
     },
-    [videos]
+    [videos, orderTerm]
   );
 
   const handleResetSearchVideos = useCallback(() => {
