@@ -1,4 +1,4 @@
-import { HomeVideoListSearchButtons } from './HomeVIdeoListSearchButtons';
+import HomeVideoListSearchButtons from './HomeVIdeoListSearchButtons';
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { VideoListProvider } from 'contexts';
@@ -20,7 +20,12 @@ const meta: Meta<typeof HomeVideoListSearchButtons> = {
 type Story = StoryObj<typeof HomeVideoListSearchButtons>;
 
 export const Basic: Story = {
-  render: () => <HomeVideoListSearchButtons />
+  render: () => (
+    <HomeVideoListSearchButtons
+      handleFilterSearchVideos={() => console.log('handleFilterSearchVideos')}
+      handleResetSearchVideos={() => console.log('handleResetSearchVideos')}
+    />
+  )
 };
 
 export default meta;

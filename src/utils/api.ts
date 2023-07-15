@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
+const api = axios.create({});
+
 const ERROR_CONNECTION = 'Error connecting to the server';
 const ERROR_ACCESS_DANIED = 'Access denied';
 
@@ -28,12 +30,12 @@ export default class ConnectionAPI {
     switch (method) {
       case MethodEnum.DELETE:
       case MethodEnum.GET:
-        return (await axios[method]<T>(url, config)).data;
+        return (await api[method]<T>(url, config)).data;
       case MethodEnum.POST:
       case MethodEnum.PUT:
       case MethodEnum.PATCH:
       default:
-        return (await axios[method]<T>(url, body, config)).data;
+        return (await api[method]<T>(url, body, config)).data;
     }
   }
 

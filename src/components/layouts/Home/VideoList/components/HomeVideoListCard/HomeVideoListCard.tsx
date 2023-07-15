@@ -17,10 +17,10 @@ const HomeVideoListCard = ({
   url,
   description
 }: HomeVideoListCardProps) => {
-  const { handleOpenModal } = useVideoModal();
+  const { handleOpenVideoModal } = useVideoModal();
   return (
     <S.HomeVideoListCardContainer
-      onClick={() => handleOpenModal({ url, title, description })}
+      onClick={() => handleOpenVideoModal({ url, title, description })}
     >
       <S.HomeVideoListCardImageContainer>
         <S.HomeVideoListCardImageOpacity className="hidden_play" />

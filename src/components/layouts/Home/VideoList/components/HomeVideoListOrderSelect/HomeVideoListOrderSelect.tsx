@@ -1,16 +1,22 @@
+import { memo } from 'react';
 import { RiArrowDownSFill } from 'react-icons/ri';
 
 import { VideoListKeys } from '@enums';
-import { useVideoList } from '@hooks';
 import { theme } from '@styles';
 
 import * as S from './HomeVideoListOrderSelect.styles';
 
 import { Select } from 'antd';
 
-const HomeVideoListOrderSelect = () => {
-  const { handleOrderData, orderTerm } = useVideoList();
+interface HomeVideoListOrderSelectProps {
+  orderTerm: VideoListKeys;
+  handleOrderSearchVideos: (orderTerm: VideoListKeys) => void;
+}
 
+const HomeVideoListOrderSelect = ({
+  orderTerm,
+  handleOrderSearchVideos
+}: HomeVideoListOrderSelectProps) => {
   return (
     <S.HomeVideoListOrderSelectContainer>
       <S.HomeVideoListOrderSelectText>
@@ -23,11 +29,11 @@ const HomeVideoListOrderSelect = () => {
           { value: VideoListKeys.CREATED_AT, label: 'Data de publicação' },
           { value: VideoListKeys.CATEGORY, label: 'Categoria' }
         ]}
-        onChange={(value: VideoListKeys) => handleOrderData(value)}
+        onChange={(value: VideoListKeys) => handleOrderSearchVideos(value)}
         suffixIcon={<RiArrowDownSFill size={30} color={theme.colors.black} />}
       />
     </S.HomeVideoListOrderSelectContainer>
   );
 };
 
-export { HomeVideoListOrderSelect };
+export default memo(HomeVideoListOrderSelect);

@@ -7,8 +7,6 @@ import { NavSectionNavigationColumn } from './components/NavSectionNavigationCol
 import { NavSectionSocialMedia } from './components/NavSectionSocialMedia/NavSectionSocialMedia';
 import * as S from './NavSection.styles';
 
-import { nanoid } from 'nanoid';
-
 const NavSection = () => {
   return (
     <PageSection>
@@ -16,7 +14,7 @@ const NavSection = () => {
         <NavSectionHeader />
         <S.NavSectionContent>
           {navSectionLinksValues.map((item) => (
-            <NavSectionNavigationColumn {...item} key={nanoid()} />
+            <NavSectionNavigationColumn {...item} key={item.title} />
           ))}
           <NavSectionNavigationColumn title="Siga a Leadster">
             <NavSectionSocialMedia />

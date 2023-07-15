@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 
 import { PageSection } from '@components-common';
-import { VideoListProvider } from '@contexts';
 import { theme } from '@styles';
 
 import { HomeBanner } from './Banner/HomeBanner';
@@ -22,9 +21,7 @@ const HomeLayout = () => {
   return (
     <>
       <HomeBanner />
-      <VideoListProvider>
-        <HomeVideoList />
-      </VideoListProvider>
+      <HomeVideoList />
       <HomeCTA />
     </>
   );

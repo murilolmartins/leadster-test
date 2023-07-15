@@ -1,21 +1,32 @@
+import { memo } from 'react';
+
 import { Button } from '@components-common';
 import { VideoCategory } from '@enums';
-import { useVideoList } from '@hooks';
 
 import * as S from './HomeVideoListSearchButtons.styles';
 
-const HomeVideoListSearchButtons = () => {
-  const { handleFilterData, handleResetData } = useVideoList();
+interface HomeVideoListSearchButtonsProps {
+  handleFilterSearchVideos: (searchTerm: VideoCategory) => void;
+  handleResetSearchVideos: () => void;
+}
+
+const HomeVideoListSearchButtons = ({
+  handleFilterSearchVideos,
+  handleResetSearchVideos
+}: HomeVideoListSearchButtonsProps) => {
   return (
     <S.HomeVideoListSerchButtonsContainer>
       {Object.values(VideoCategory).map((category) => (
-        <Button key={category} onClick={() => handleFilterData(category)}>
+        <Button
+          key={category}
+          onClick={() => handleFilterSearchVideos(category)}
+        >
           {category}
         </Button>
       ))}
-      <Button onClick={handleResetData}>Todos</Button>
+      <Button onClick={handleResetSearchVideos}>Todos</Button>
     </S.HomeVideoListSerchButtonsContainer>
   );
 };
 
-export { HomeVideoListSearchButtons };
+export default memo(HomeVideoListSearchButtons);

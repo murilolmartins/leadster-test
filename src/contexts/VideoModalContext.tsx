@@ -3,6 +3,7 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useCallback,
   useState
 } from 'react';
 
@@ -40,10 +41,10 @@ export const VideoModalProvider = ({
   const [data, setData] = useState<VideoModalData>(initialData);
   const [isModalVisible, setIsModalVisible] = useState(initialVisible);
 
-  const handleOpenModal = (videoData: VideoModalData) => {
+  const handleOpenModal = useCallback((videoData: VideoModalData) => {
     setData(videoData);
     setIsModalVisible(true);
-  };
+  }, []);
 
   const handleCloseModal = () => {
     const iframeModal = document.getElementById('responsive-iframe');

@@ -1,23 +1,38 @@
 import { PageSection } from '@components-common';
-import { useVideoList } from '@hooks';
 
 import { HomeVideoListCard } from './components/HomeVideoListCard/HomeVideoListCard';
-import { HomeVideoListOrderSelect } from './components/HomeVideoListOrderSelect/HomeVideoListOrderSelect';
-import { HomeVideoListSearchButtons } from './components/HomeVideoListSearchButtons/HomeVIdeoListSearchButtons';
+import HomeVideoListHeader from './components/HomeVideoListHeader/HomeVideoListHeader';
+import HomeVideoListOrderSelect from './components/HomeVideoListOrderSelect/HomeVideoListOrderSelect';
+import HomeVideoListSearchButtons from './components/HomeVideoListSearchButtons/HomeVIdeoListSearchButtons';
 import * as S from './HomeVideoList.styles';
+import { useVideos } from './hooks/useVideos';
 
 import { List } from 'antd';
 
 const HomeVideoList = () => {
-  const { data, isLoading } = useVideoList();
+  const {
+    searchVideos,
+    orderTerm,
+    handleFilterSearchVideos,
+    handleOrderSearchVideos,
+    handleResetSearchVideos,
+    videos,
+    isLoading
+  } = useVideos();
 
   return (
     <PageSection>
       <S.HomeVideoListContainer>
-        <S.HomeVideoListSearchOptionsContainer>
-          <HomeVideoListSearchButtons />
-          <HomeVideoListOrderSelect />
-        </S.HomeVideoListSearchOptionsContainer>
+        <HomeVideoListHeader>
+          <HomeVideoListSearchButtons
+            handleFilterSearchVideos={handleFilterSearchVideos}
+            handleResetSearchVideos={handleResetSearchVideos}
+          />
+          <HomeVideoListOrderSelect
+            handleOrderSearchVideos={handleOrderSearchVideos}
+            orderTerm={orderTerm}
+          />
+        </HomeVideoListHeader>
         <List
           style={{
             display: 'flex',
@@ -32,9 +47,9 @@ const HomeVideoList = () => {
             pageSize: 9
           }}
           loading={isLoading}
-          dataSource={data.search.length > 0 ? data.search : data.initialData}
+          dataSource={searchVideos.length > 0 ? searchVideos : videos}
           renderItem={(item) => (
-            <List.Item style={{ padding: '20px' }}>
+            <List.Item style={{ padding: '20px' }} key={item.id}>
               <HomeVideoListCard
                 title={item.title}
                 url={item.url}
