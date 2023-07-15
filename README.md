@@ -8,7 +8,6 @@ Este é um teste realizado para a LEADSTER, em que o objetivo era criar uma home
 https://leadster-test-nine.vercel.app/
 
 
-
 # Comandos de inicialização
 
 - Iniciar app
@@ -51,6 +50,12 @@ Avaliei primeiro oque foi solicitado pela empresa para cumprir o básico do test
 A pagina contem seções transversais simples em que uma delas tem uma lista de vídeos apresentados com paginação e com filtros.
 
 A pagina contem um modal com um player dentro.
+
+![biblioteca-de-videosArtboard-1-copy](https://github.com/murilolmartins/leadster-test/assets/88338286/2dabba9b-f95b-4309-8981-359fb00ef4f1)
+
+
+![Artboard-1-copy-2](https://github.com/murilolmartins/leadster-test/assets/88338286/6c3fe5ee-2fa9-4103-b488-316c4e2e086e)
+
 
 ## Decidir as bibliotecas
 
