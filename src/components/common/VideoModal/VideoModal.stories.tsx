@@ -1,9 +1,11 @@
+import { useEffect } from 'react';
+
 import { videoListValues } from '@constants';
+import { useVideoModal } from '@hooks';
 
 import { VideoModal } from './VideoModal';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { VideoModalProvider } from 'contexts';
 
 const props = {
   title: videoListValues[0].title,
@@ -13,22 +15,23 @@ const props = {
 
 const meta: Meta<typeof VideoModal> = {
   title: 'Components/VideoModal',
-  component: VideoModal,
-  decorators: [
-    (Story) => {
-      return (
-        <VideoModalProvider initialData={props} initialVisible>
-          <Story />
-        </VideoModalProvider>
-      );
-    }
-  ]
+  component: VideoModal
 };
 
 type Story = StoryObj<typeof VideoModal>;
 
+const Component = () => {
+  const { handleOpenVideoModal } = useVideoModal();
+
+  useEffect(() => {
+    handleOpenVideoModal(props);
+  }, [handleOpenVideoModal]);
+
+  return <VideoModal />;
+};
+
 export const Basic: Story = {
-  render: () => <VideoModal />
+  render: () => <Component />
 };
 
 export default meta;

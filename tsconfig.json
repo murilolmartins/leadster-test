@@ -29,6 +29,7 @@
       "@test": ["test/index"],
       "@utils": ["utils/index"],
       "@services": ["services/index"],
+      "@db": ["db/videos.json"],
     }
   },
 
