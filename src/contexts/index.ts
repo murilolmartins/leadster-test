@@ -1,2 +1,2 @@
-export * from './VideoListContext';
-export * from './VideoModalContext';
+export * from './deprecated/VideoListContext';
+export * from './deprecated/VideoModalContext';

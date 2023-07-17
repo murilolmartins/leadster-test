@@ -4,6 +4,15 @@ import { ThemeProvider } from 'styled-components';
 
 import { theme, GlobalStyles } from '../src/styles';
 
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { rest } from 'msw';
+import videos from "../src/db/videos.json"
+
+initialize({
+  onUnhandledRequest: "bypass"
+});
+
+
 export const decorators = [
   withThemeFromJSXProvider({
     themes: {
@@ -12,7 +21,7 @@ export const decorators = [
     defaultTheme: 'light',
     Provider: ThemeProvider,
     GlobalStyles
-  })
+  }),
 ];
 
 const preview: Preview = {
@@ -23,8 +32,20 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/
       }
-    }
-  }
+    },
+    msw: {
+      handlers: {
+        videos: [
+           rest.get('/api/videos', (req, res, ctx) => {
+              return res(
+                ctx.json(videos)
+              )
+           }),
+        ],
+      }
+   }
+  },
+  loaders: [mswLoader]
 };
 
 export default preview;

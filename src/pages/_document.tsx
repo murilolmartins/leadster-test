@@ -77,7 +77,7 @@ class MyDocument extends Document {
             content={`${siteUrl}/static/images/thumbnail.png`}
           />
 
-          <link rel="icon" href="icon-check.svg" />
+          <link rel="icon" href="favicon.svg" />
         </Head>
         <body>
           <Main />
